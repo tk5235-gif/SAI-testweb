@@ -1,0 +1,19 @@
+# 依存パッケージ
+node_modules/
+
+# 別プロジェクト（PowerPoint生成・サイトとは無関係）
+deck/
+
+# 重い写真原本（サイトは images/ 内の軽量版を使用）
+salesphoto/
+
+# エディタ／プレビュー設定
+.claude/
+
+# OS生成ファイル
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Windowsショートカット
+*.lnk

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社SAI | 時代の先を読む戦略で、価値を創造する。</title>
+<meta name="description" content="株式会社SAIのコーポレートサイト。時代の先を読む戦略で、価値を創造する。マーケティング・事業開発・カスタマーサポートで企業の挑戦を加速させます。">
+<meta name="keywords" content="株式会社SAI,SAI,マーケティング,広告運用,事業開発,渋谷,コーポレートサイト">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta property="og:title" content="株式会社SAI | 時代の先を読む戦略で、価値を創造する。">
+<meta property="og:description" content="マーケティング・事業開発・カスタマーサポートで企業の挑戦を加速させます。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+Antique:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 粒子アニメ背景 -->
+<canvas id="particle-canvas"></canvas>
+<div class="grain"></div>
+
+<!-- ローディング -->
+<div class="loader" id="loader">
+    <div class="loader-logo">SAI</div>
+    <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- ヘッダー -->
+<header class="header" id="header">
+    <a href="#hero" class="header-logo">
+        <img src="logo-mark.png" alt="SAI" class="header-logo-mark">
+        <span class="header-logo-text">SAI</span>
+    </a>
+    <nav class="nav-pc">
+        <a href="#philosophy"><span class="nav-num">01</span>企業理念</a>
+        <a href="#service"><span class="nav-num">02</span>事業内容</a>
+        <a href="#strength"><span class="nav-num">04</span>強み</a>
+        <a href="#message"><span class="nav-num">05</span>代表メッセージ</a>
+        <a href="#members"><span class="nav-num">06</span>メンバー</a>
+        <a href="#company"><span class="nav-num">09</span>会社概要</a>
+        <a href="recruit/index.html" class="nav-recruit">採用サイト<span>→</span></a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+
+<!-- モバイルメニュー -->
+<div class="nav-mobile" id="navMobile">
+    <nav>
+        <a href="#philosophy"><span class="nav-num">01</span>企業理念</a>
+        <a href="#service"><span class="nav-num">02</span>事業内容</a>
+        <a href="#dept-intro"><span class="nav-num">03</span>事業部紹介</a>
+        <a href="#strength"><span class="nav-num">04</span>強み</a>
+        <a href="#message"><span class="nav-num">05</span>代表メッセージ</a>
+        <a href="#members"><span class="nav-num">06</span>メンバー</a>
+        <a href="#numbers"><span class="nav-num">07</span>数字で見るSAI</a>
+        <a href="#service-reel"><span class="nav-num">08</span>提供サービス一覧</a>
+        <a href="#company"><span class="nav-num">09</span>会社概要</a>
+        <a href="recruit/index.html" class="nav-recruit">採用サイト<span>→</span></a>
+    </nav>
+</div>
+
+<main>
+
+<section class="hero" id="hero">
+    <div class="hero-slideshow" aria-hidden="true">
+        <div class="hero-slide is-active" style="background-image:url('images/hero/hero1.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/hero/hero2.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/hero/hero3.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/hero/hero4.jpg')"></div>
+        <div class="hero-scrim"></div>
+    </div>
+    <div class="hero-gradient"></div>
+    <div class="hero-inner">
+        <p class="hero-eyebrow" data-reveal>SAI CORPORATION</p>
+        <h1 class="hero-copy">
+            <span class="line" data-reveal><span>時代の先を読む戦略で、</span></span>
+            <span class="line" data-reveal><span>価値を<em>創造</em>する。</span></span>
+        </h1>
+        <p class="hero-lead" data-reveal>その一歩先へ、価値とともに。</p>
+    </div>
+    <div class="hero-scroll"><span>SCROLL</span><i></i></div>
+    <div class="hero-side">株式会社SAI &mdash; Speed / Action / Innovation</div>
+</section>
+
+
+<div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+        <div class="marquee-set"><span class="marquee-word">SPEED</span><span class="marquee-dot">✦</span><span class="marquee-word">ACTION</span><span class="marquee-dot">✦</span><span class="marquee-word">INNOVATION</span><span class="marquee-dot">✦</span></div>
+        <div class="marquee-set"><span class="marquee-word">SPEED</span><span class="marquee-dot">✦</span><span class="marquee-word">ACTION</span><span class="marquee-dot">✦</span><span class="marquee-word">INNOVATION</span><span class="marquee-dot">✦</span></div>
+    </div>
+</div>
+
+
+<section class="philosophy" id="philosophy">
+    <div class="sec-head" data-reveal>
+        <span class="sec-num">01</span>
+        <h2 class="sec-en sec-ja-main">企業理念</h2>
+    </div>
+
+    <div class="phil-block" data-reveal>
+        <p class="phil-label">MISSION</p>
+        <h3 class="phil-main centered">プロフェッショナルとして妥協なく挑戦し、<br>顧客・社会・社員の価値を最大化する。</h3>
+        <p class="phil-text">効率的な仕組みを創造し、持続的な成長と収益を実現する。<br>私たちは三者すべての価値創造を追い求めます。</p>
+        <div class="phil-mini-grid">
+            <div class="phil-mini"><h4>プロフェッショナリズム</h4><p>高い専門性と誇りを持ち、<br>常に最高品質を追求します</p></div>
+            <div class="phil-mini"><h4>価値の最大化</h4><p>顧客・社会・社員の三者<br>にとっての価値創造を目指します</p></div>
+            <div class="phil-mini"><h4>持続的成長</h4><p>長期視点での継続的な成長と<br>安定した収益を実現します</p></div>
+        </div>
+    </div>
+
+    <div class="phil-block vision-block" data-reveal>
+        <p class="phil-label">VISION</p>
+        <h3 class="phil-main">誰からも求められる<br>強みを持つ集団へ。</h3>
+        <p class="phil-text">個人の夢をかなえ、チームで助け合いながら成長し続けることで、お客様や社会に信頼され、安定した利益を生み出す会社になる。</p>
+        <div class="phil-mini-grid">
+            <div class="phil-mini"><h4>唯一無二の強み</h4><p>誰からも求められる確かな価値を提供し続ける</p></div>
+            <div class="phil-mini"><h4>個と組織の成長</h4><p>個人の夢実現とチーム協力を両立させる</p></div>
+            <div class="phil-mini"><h4>信頼と収益</h4><p>社会からの厚い信頼と安定した利益創出</p></div>
+        </div>
+    </div>
+
+    <div class="phil-values">
+        <p class="phil-label" data-reveal>VALUE</p>
+        <h3 class="phil-values-lead" data-reveal>私たちが大切にする6つの価値観。</h3>
+        <div class="value-grid value-grid-6">
+            <div class="value-card" data-reveal>
+                <span class="value-num">01</span>
+                <h4>妥協しない品質追求</h4>
+                <p class="value-desc">プロとしての誇りを持ち、<br>最高の成果を目指す。</p>
+            </div>
+            <div class="value-card" data-reveal>
+                <span class="value-num">02</span>
+                <h4>目標への情熱と利益貢献</h4>
+                <p class="value-desc">個人の夢実現が<br>チーム力と収益向上につながる。</p>
+            </div>
+            <div class="value-card" data-reveal>
+                <span class="value-num">03</span>
+                <h4>創意工夫と効率化</h4>
+                <p class="value-desc">できない理由ではなく、<br>できる方法を見つけ出す。</p>
+            </div>
+            <div class="value-card" data-reveal>
+                <span class="value-num">04</span>
+                <h4>チャレンジ＆ラーニング</h4>
+                <p class="value-desc">失敗を成長に変え、<br>新しい価値を創出する。</p>
+            </div>
+            <div class="value-card" data-reveal>
+                <span class="value-num">05</span>
+                <h4>圧倒的な強みの深化</h4>
+                <p class="value-desc">差別化できる能力を磨き、<br>持続的な競争優位を築く。</p>
+            </div>
+            <div class="value-card" data-reveal>
+                <span class="value-num">06</span>
+                <h4>相互尊重と協働</h4>
+                <p class="value-desc">多様なチームの力を掛け合わせ、<br>成果を最大化する。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+        <div class="marquee-set"><span class="marquee-word">PROFESSIONAL EXCELLENCE</span><span class="marquee-dot">✦</span><span class="marquee-word">VALUE CREATION</span><span class="marquee-dot">✦</span><span class="marquee-word">SUSTAINABLE GROWTH</span><span class="marquee-dot">✦</span></div>
+        <div class="marquee-set"><span class="marquee-word">PROFESSIONAL EXCELLENCE</span><span class="marquee-dot">✦</span><span class="marquee-word">VALUE CREATION</span><span class="marquee-dot">✦</span><span class="marquee-word">SUSTAINABLE GROWTH</span><span class="marquee-dot">✦</span></div>
+    </div>
+</div>
+
+
+<section class="service" id="service">
+    <div class="sec-head" data-reveal>
+        <span class="sec-num">02</span>
+        <h2 class="sec-en sec-ja-main">事業内容</h2>
+    </div>
+
+    <div class="service-list">
+        <article class="service-item" data-reveal>
+            <div class="service-ph"><span class="ph-label">IMAGE</span></div>
+            <div class="service-body">
+                <span class="service-no">SERVICE 01</span>
+                <h3 class="service-title">マーケティング支援</h3>
+                <p class="service-text">市場調査からコンテンツ設計、データ分析まで。売れる仕組みを独自のノウハウで構築し、クライアントの事業成長を後押しします。</p>
+                <ul class="service-tags"><li>市場調査</li><li>戦略立案</li><li>データ分析</li></ul>
+            </div>
+        </article>
+
+        <article class="service-item reverse" data-reveal>
+            <div class="service-ph"><span class="ph-label">IMAGE</span></div>
+            <div class="service-body">
+                <span class="service-no">SERVICE 02</span>
+                <h3 class="service-title">カスタマーサポート</h3>
+                <p class="service-text">顧客とのコミュニケーション量を最適化。感情とレスポンスの早さを両立し、一人ひとりにファンがつくカスタマー育成を目指します。</p>
+                <ul class="service-tags"><li>CS設計</li><li>CRM運用</li><li>ロイヤルティ</li></ul>
+            </div>
+        </article>
+
+        <article class="service-item" data-reveal>
+            <div class="service-ph"><span class="ph-label">IMAGE</span></div>
+            <div class="service-body">
+                <span class="service-no">SERVICE 03</span>
+                <h3 class="service-title">事業開発</h3>
+                <p class="service-text">既存の枠を超え、外部と共創しながら未来へ向けた新規事業を立ち上げる。裁量と責任を持って、0→1の価値創造に挑みます。</p>
+                <ul class="service-tags"><li>新規事業</li><li>共創</li><li>事業戦略</li></ul>
+            </div>
+        </article>
+    </div>
+</section>
+
+
+<!-- 事業部紹介（概要） -->
+<section class="dept-intro" id="dept-intro">
+    <div class="sec-head" data-reveal>
+        <span class="sec-num">03</span>
+        <h2 class="sec-en sec-ja-main">事業部紹介</h2>
+    </div>
+    <div class="dept-intro-grid">
+        <article class="dept-intro-card" data-reveal>
+            <span class="dept-intro-no">01</span>
+            <h3>営業部</h3>
+            <p>クライアントの課題に深く向き合い、最適なソリューションを提案。長期的なパートナーシップを築き、事業成長を支えます。</p>
+        </article>
+        <article class="dept-intro-card" data-reveal>
+            <span class="dept-intro-no">02</span>
+            <h3>広告運用部</h3>
+            <p>データドリブンな広告運用で成果を最大化。媒体戦略の設計から日々の改善まで、数字に基づいて最適化を追求します。</p>
+        </article>
+        <article class="dept-intro-card" data-reveal>
+            <span class="dept-intro-no">03</span>
+            <h3>事業開発部</h3>
+            <p>0→1の新規事業創造に挑む部門。外部との共創を通じて、未来に向けた新しい価値を生み出し続けます。</p>
+        </article>
+        <article class="dept-intro-card" data-reveal>
+            <span class="dept-intro-no">04</span>
+            <h3>カスタマーサポート部</h3>
+            <p>顧客満足の最前線。感情とレスポンスの早さを両立し、一人ひとりにファンがつくサポートを実現します。</p>
+        </article>
+    </div>
+    <p class="dept-intro-more" data-reveal>各事業部の働き方・キャリアは <a href="recruit/index.html">採用サイト</a> で詳しく紹介しています。</p>
+</section>
+
+
+<!-- 強み -->
+<section class="strength" id="strength">
+    <div class="sec-head" data-reveal>
+        <span class="sec-num">04</span>
+        <h2 class="sec-en sec-ja-main">SAIの強み</h2>
+    </div>
+    <div class="strength-grid">
+        <article class="strength-card" data-reveal>
+            <span class="strength-no">01</span>
+            <h3>スピードと実行力</h3>
+            <p>完璧な計画より速い一歩。仮説と検証を高速で回し、誰よりも早く価値を届けます。意思決定から実行までの速さが、SAI最大の武器です。</p>
+        </article>
+        <article class="strength-card" data-reveal>
+            <span class="strength-no">02</span>
+            <h3>裁量と責任</h3>
+            <p>役割にとらわれず、各々が自らの判断で最善を選択。一人ひとりが当事者として動くからこそ、成果に直結する仕事ができます。</p>
+        </article>
+        <article class="strength-card" data-reveal>
+            <span class="strength-no">03</span>
+            <h3>再現性のある仕組み</h3>
+            <p>一つの成功を仕組み化し、横展開する。属人的なノウハウを資産化することで、安定した成果を生み出し続けます。</p>
+        </article>
+    </div>
+</section>
+
+
+<div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+        <div class="marquee-set"><span class="marquee-word">SPEED</span><span class="marquee-dot">✦</span><span class="marquee-word">ACTION</span><span class="marquee-dot">✦</span><span class="marquee-word">INNOVATION</span><span class="marquee-dot">✦</span></div>
+        <div class="marquee-set"><span class="marquee-word">SPEED</span><span class="marquee-dot">✦</span><span class="marquee-word">ACTION</span><span class="marquee-dot">✦</span><span class="marquee-word">INNOVATION</span><span class="marquee-dot">✦</span></div>
+    </div>
+</div>
+
+
+<section class="message" id="message">
+    <div class="sec-head" data-reveal>
+        <span class="sec-num">05</span>
+        <h2 class="sec-en sec-ja-main">代表メッセージ</h2>
+    </div>
+    <div class="message-inner">
+        <div class="message-photo" data-reveal>
+            <div class="ceo-photo is-ph"><span class="ph-label">代表写真</span></div>
+        </div>
+        <div class="message-body" data-reveal>
+            <h3 class="message-catch">挑戦し続け、<br>新たな価値を創造する。</h3>
+            <p class="message-text">私たち株式会社SAIは、常に新しい価値を追求し、お客様に感動を届けるサービスを提供することで、社会に貢献することを使命としています。これまで数々の挑戦に取り組み、着実に成長を遂げてまいりました。</p>
+            <p class="message-text">この成長は、私たちが掲げる「挑戦」と「革新」の精神によって支えられてきたものだと確信しています。今後も変化の激しい時代の中で、その一歩先を見据え、お客様の期待を超える価値を創出し続ける企業でありたいと考えています。</p>
+            <div class="message-sign">
+                <img class="sign-img" src="sign.png" alt="月坂 浄 署名">
+                <div class="sign-name"><span>代表取締役</span><strong>月坂 浄</strong></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- メンバー（事業部別・各部2名） -->
+<section class="members" id="members">
+    <div class="sec-head" data-reveal>
+        <span class="sec-num">06</span>
+        <h2 class="sec-en">MEMBERS</h2>
+        <p class="sec-ja">メンバー</p>
+    </div>
+    <div class="dept-list">
+
+        <div class="dept" data-reveal>
+            <div class="dept-head">
+                <span class="dept-no">01</span>
+                <h3 class="dept-name">営業部</h3>
+            </div>
+            <div class="dept-members">
+                <article class="mem-card">
+                    <div class="mem-photo"><img src="images/members/itou.jpg" alt="伊藤 義将"></div>
+                    <div class="mem-body">
+                        <p class="mem-role">SALES MANAGER</p>
+                        <h4 class="mem-name">伊藤 義将</h4>
+                        <p class="mem-comment">クライアントの一歩先を読み、課題の本質から提案する。長く伴走できる関係を何より大切にしています。</p>
+                    </div>
+                </article>
+                <article class="mem-card">
+                    <div class="mem-photo"><img src="images/members/yoshinaga.jpg" alt="吉永 友太郎"></div>
+                    <div class="mem-body">
+                        <p class="mem-role">SALES</p>
+                        <h4 class="mem-name">吉永 友太郎</h4>
+                        <p class="mem-comment">「ありがとう」の一言が原動力。誠実な対話を重ね、信頼をひとつずつ積み上げています。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="dept" data-reveal>
+            <div class="dept-head">
+                <span class="dept-no">02</span>
+                <h3 class="dept-name">広告運用部</h3>
+            </div>
+            <div class="dept-members">
+                <article class="mem-card">
+                    <div class="mem-photo"><img src="member3.jpg" alt="中村 健太"></div>
+                    <div class="mem-body">
+                        <p class="mem-role">AD OPS MANAGER</p>
+                        <h4 class="mem-name">中村 健太</h4>
+                        <p class="mem-comment">数字は嘘をつかない。日々の改善を積み重ね、クライアントの成果を最大化します。</p>
+                    </div>
+                </article>
+                <article class="mem-card">
+                    <div class="mem-photo"><img src="member1.jpg" alt="佐藤 玲"></div>
+                    <div class="mem-body">
+                        <p class="mem-role">AD OPERATOR</p>
+                        <h4 class="mem-name">佐藤 玲</h4>
+                        <p class="mem-comment">媒体の変化が速いからこそ、学び続ける毎日が楽しい。挑戦できる領域だと感じています。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="dept" data-reveal>
+            <div class="dept-head">
+                <span class="dept-no">03</span>
+                <h3 class="dept-name">事業開発部</h3>
+            </div>
+            <div class="dept-members">
+                <article class="mem-card">
+                    <div class="mem-photo"><img src="member2.jpg" alt="小林 涼"></div>
+                    <div class="mem-body">
+                        <p class="mem-role">BIZ DEV MANAGER</p>
+                        <h4 class="mem-name">小林 涼</h4>
+                        <p class="mem-comment">0→1は孤独で、そして楽しい。職種を越えて本音で議論できる場をつくっています。</p>
+                    </div>
+                </article>
+                <article class="mem-card">
+                    <div class="mem-photo"><img src="member3.jpg" alt="青木 友也"></div>
+                    <div class="mem-body">
+                        <p class="mem-role">BIZ DEVELOPER</p>
+                        <h4 class="mem-name">青木 友也</h4>
+                        <p class="mem-comment">前例がない方が燃えるタイプ。未来の事業になる種を、現場で探し続けています。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="dept" data-reveal>
+            <div class="dept-head">
+                <span class="dept-no">04</span>
+                <h3 class="dept-name">カスタマーサポート部</h3>
+            </div>
+            <div class="dept-members">
+                <article class="mem-card">
+                    <div class="mem-photo"><img src="member1.jpg" alt="高橋 葵"></div>
+                    <div class="mem-body">
+                        <p class="mem-role">CS MANAGER</p>
+                        <h4 class="mem-name">高橋 葵</h4>
+                        <p class="mem-comment">感情とスピードの両立が信条。お客様一人ひとりにファンになってもらえるサポートを目指します。</p>
+                    </div>
+                </article>
+                <article class="mem-card">
+                    <div class="mem-photo"><img src="member2.jpg" alt="藤平 勇太"></div>
+                    <div class="mem-body">
+                        <p class="mem-role">CUSTOMER SUCCESS</p>
+                        <h4 class="mem-name">藤平 勇太</h4>
+                        <p class="mem-comment">わからないを放置しない。丁寧さと速さで、安心して任せられる窓口であり続けます。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </div>
+    <p class="num-note" data-reveal>※氏名・コメントはサンプルです。実取材・実撮影で差し替えてください。</p>
+</section>
+
+
+<section class="numbers" id="numbers">
+    <div class="sec-head" data-reveal>
+        <span class="sec-num">07</span>
+        <h2 class="sec-en">NUMBERS</h2>
+        <p class="sec-ja">数字で見るSAI</p>
+    </div>
+    <div class="num-grid">
+        <div class="num-card" data-reveal>
+            <span class="num-val" data-count="2015">2015</span>
+            <span class="num-label">設立年</span>
+        </div>
+        <div class="num-card" data-reveal>
+            <span class="num-val" data-count="0">0</span><span class="num-suffix">+</span>
+            <span class="num-label">支援企業数</span>
+        </div>
+        <div class="num-card" data-reveal>
+            <span class="num-val" data-count="32">0</span><span class="num-suffix">名</span>
+            <span class="num-label">メンバー数</span>
+        </div>
+        <div class="num-card" data-reveal>
+            <span class="num-val" data-count="4">0</span><span class="num-suffix">事業</span>
+            <span class="num-label">事業領域</span>
+        </div>
+    </div>
+    <p class="num-note" data-reveal>※数値はプレースホルダーです。確定値に差し替えてください。</p>
+</section>
+
+<!-- SERVICE REEL：提供サービス一覧 -->
+<section class="service-reel" id="service-reel" data-reveal>
+    <div class="sec-head" data-reveal>
+        <span class="sec-num">08</span>
+        <h2 class="sec-en sec-ja-main">提供サービス一覧</h2>
+    </div>
+    <div class="service-reel-grid">
+        <article class="service-reel-card" data-reveal>
+            <span class="service-reel-tag">MARKETING</span>
+            <h3 class="service-reel-title">マーケティング支援</h3>
+            <p class="service-reel-desc">市場調査からコンテンツ設計、データ分析まで。独自のノウハウで「売れる仕組み」を構築し、クライアントの事業成長を後押しします。</p>
+            <div class="service-reel-photo"><span class="ph-label">PHOTO</span></div>
+        </article>
+        <article class="service-reel-card" data-reveal>
+            <span class="service-reel-tag">CS</span>
+            <h3 class="service-reel-title">カスタマーサポート</h3>
+            <p class="service-reel-desc">顧客とのコミュニケーションを最適化。感情とレスポンスの早さを両立し、一人ひとりにファンがつくカスタマー育成を目指します。</p>
+            <div class="service-reel-photo"><span class="ph-label">PHOTO</span></div>
+        </article>
+        <article class="service-reel-card" data-reveal>
+            <span class="service-reel-tag">DEVELOPMENT</span>
+            <h3 class="service-reel-title">事業開発</h3>
+            <p class="service-reel-desc">既存の枠を超え、外部と共創しながら新規事業を立ち上げる。裁量と責任を持って、0→1の価値創造に挑みます。</p>
+            <div class="service-reel-photo"><span class="ph-label">PHOTO</span></div>
+        </article>
+    </div>
+</section>
+
+
+<!-- 採用サイトへの導線バナー -->
+<section class="recruit" id="recruit">
+    <div class="recruit-bg"></div>
+    <div class="recruit-inner align-top-left" data-reveal>
+        <h2 class="recruit-en">RECRUIT</h2>
+        <p class="recruit-catch">挑戦する仲間を、募集しています。</p>
+        <p class="recruit-text">Speed・Action・Innovation。裁量と責任を持って、自らの判断で価値を生み出したい方へ。働き方・カルチャー・募集要項は、採用サイトでご覧いただけます。</p>
+        <a href="recruit/index.html" class="recruit-btn">採用サイトを見る<i></i></a>
+    </div>
+</section>
+
+
+<div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+        <div class="marquee-set"><span class="marquee-word">SPEED</span><span class="marquee-dot">✦</span><span class="marquee-word">ACTION</span><span class="marquee-dot">✦</span><span class="marquee-word">INNOVATION</span><span class="marquee-dot">✦</span></div>
+        <div class="marquee-set"><span class="marquee-word">SPEED</span><span class="marquee-dot">✦</span><span class="marquee-word">ACTION</span><span class="marquee-dot">✦</span><span class="marquee-word">INNOVATION</span><span class="marquee-dot">✦</span></div>
+    </div>
+</div>
+
+
+<section class="company" id="company">
+    <div class="sec-head" data-reveal>
+        <span class="sec-num">09</span>
+        <h2 class="sec-en">COMPANY</h2>
+        <p class="sec-ja">会社概要</p>
+    </div>
+    <dl class="company-table" data-reveal>
+        <div><dt>会社名</dt><dd>株式会社SAI</dd></div>
+        <div><dt>所在地</dt><dd>東京都渋谷区</dd></div>
+        <div><dt>設立</dt><dd>2015年</dd></div>
+        <div><dt>代表者</dt><dd>代表取締役　月坂 浄</dd></div>
+        <div><dt>事業内容</dt><dd>イーラーニング教材・オンラインスクールの企画／ネットマーケティング戦略の立案／クリエイティブ制作／広告代理業／カスタマーサービス</dd></div>
+        <div><dt>従業員数</dt><dd>32名</dd></div>
+        <div><dt>取引先企業</dt><dd><ul class="client-list">
+            <li>ソネット・メディア・トレーディング株式会社</li>
+            <li>株式会社サイバーエージェント</li>
+            <li>株式会社Gunosy</li>
+            <li>LINEヤフー株式会社</li>
+            <li>Facebook Japan株式会社</li>
+            <li>Google合同会社</li>
+        </ul></dd></div>
+    </dl>
+</section>
+
+</main>
+
+<!-- フッター -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <img src="logo-mark.png" alt="SAI" class="footer-logo">
+            <p class="footer-tagline">時代の先を読む戦略で、<br>価値を創造する。</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="#philosophy">PHILOSOPHY</a>
+            <a href="#service">SERVICE</a>
+            <a href="#message">MESSAGE</a>
+            <a href="#numbers">NUMBERS</a>
+            <a href="#company">COMPANY</a>
+            <a href="recruit/index.html">RECRUIT</a>
+            <a href="privacy.html">PRIVACY</a>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <small>&copy; 株式会社SAI All rights reserved.</small>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
