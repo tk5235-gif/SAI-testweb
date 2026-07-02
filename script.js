@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => loader.classList.add('is-hidden'), 2600); // フォールバック
     }
 
+    /* ── 画像の読み込み演出（ロード完了でフェードイン） ── */
+    document.querySelectorAll('.mem-photo img').forEach(img => {
+        if (img.complete) return;              // キャッシュ済みは即時表示
+        img.classList.add('is-loading');
+        img.addEventListener('load', () => img.classList.remove('is-loading'), { once: true });
+        img.addEventListener('error', () => img.classList.remove('is-loading'), { once: true });
+    });
+
     /* ── HERO 写真クロスフェード ── */
     const heroSlides = document.querySelectorAll('.hero-slide');
     if (heroSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -256,6 +264,54 @@ document.addEventListener('DOMContentLoaded', () => {
         // URLハッシュ（#cs / #sales）で初期タブを選択
         const initRole = location.hash === '#cs' ? 'cs' : (location.hash === '#sales' ? 'sales' : null);
         if (initRole) wsActivate(initRole);
+    }
+
+    /* ── お問い合わせフォーム（リアルタイム検証＋メール作成） ── */
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const setErr = (field, msg) => {
+            const wrap = field.closest('.form-field') || field.closest('.form-check')?.parentElement;
+            const err = contactForm.querySelector(`.form-error[data-for="${field.id}"]`);
+            const ok = !msg;
+            if (wrap && wrap.classList.contains('form-field')) {
+                wrap.classList.toggle('is-invalid', !ok);
+                wrap.classList.toggle('is-valid', ok && field.value.trim() !== '');
+            }
+            if (err) { err.textContent = msg || ''; err.classList.toggle('is-shown', !ok); }
+            return ok;
+        };
+        const validate = (field) => {
+            if (field.type === 'checkbox') return setErr(field, field.checked ? '' : '同意が必要です。');
+            const v = field.value.trim();
+            if (field.required && !v) return setErr(field, '入力してください。');
+            if (field.type === 'email' && v && !emailRe.test(v)) return setErr(field, 'メールアドレスの形式をご確認ください。');
+            return setErr(field, '');
+        };
+        const fields = ['cf-name', 'cf-email', 'cf-type', 'cf-message', 'cf-agree']
+            .map(id => document.getElementById(id)).filter(Boolean);
+        fields.forEach(f => {
+            const ev = (f.tagName === 'SELECT' || f.type === 'checkbox') ? 'change' : 'blur';
+            f.addEventListener(ev, () => validate(f));
+            f.addEventListener('input', () => { if ((f.closest('.form-field') || {}).classList?.contains('is-invalid')) validate(f); });
+        });
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let firstInvalid = null;
+            fields.forEach(f => { if (!validate(f) && !firstInvalid) firstInvalid = f; });
+            if (firstInvalid) { firstInvalid.focus(); return; }
+            const g = id => (document.getElementById(id).value || '').trim();
+            const subject = `【お問い合わせ／${g('cf-type')}】${g('cf-name')}`;
+            const body =
+                `お名前：${g('cf-name')}\n` +
+                `会社名：${g('cf-company')}\n` +
+                `メール：${g('cf-email')}\n` +
+                `電話：${g('cf-tel')}\n` +
+                `種別：${g('cf-type')}\n\n` +
+                `【お問い合わせ内容】\n${g('cf-message')}\n`;
+            // ※ 送信先。Formspree等に切り替える場合はこの mailto を form action に差し替え
+            window.location.href = `mailto:info@saigroupe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
     }
 
 });

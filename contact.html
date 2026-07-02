@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | 株式会社SAI</title>
+<meta name="description" content="株式会社SAIへのお問い合わせページです。サービス・採用・取材などお気軽にご連絡ください。">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+Antique:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 粒子アニメ背景 -->
+<canvas id="particle-canvas"></canvas>
+<div class="grain"></div>
+
+
+<!-- ヘッダー -->
+<header class="header" id="header">
+    <a href="index.html" class="header-logo">
+        <img src="logo-mark.png" alt="SAI" class="header-logo-mark">
+        <span class="header-logo-text">SAI</span>
+    </a>
+    <nav class="nav-pc">
+        <a href="index.html#philosophy"><span class="nav-num">01</span>企業理念</a>
+        <a href="index.html#service"><span class="nav-num">02</span>事業内容</a>
+        <a href="index.html#strength"><span class="nav-num">04</span>強み</a>
+        <a href="index.html#members"><span class="nav-num">06</span>メンバー</a>
+        <a href="index.html#company"><span class="nav-num">09</span>会社概要</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+
+<!-- モバイルメニュー -->
+<div class="nav-mobile" id="navMobile">
+    <nav>
+        <a href="index.html#philosophy"><span class="nav-num">01</span>企業理念</a>
+        <a href="index.html#service"><span class="nav-num">02</span>事業内容</a>
+        <a href="index.html#dept-intro"><span class="nav-num">03</span>事業部紹介</a>
+        <a href="index.html#strength"><span class="nav-num">04</span>強み</a>
+        <a href="index.html#message"><span class="nav-num">05</span>代表メッセージ</a>
+        <a href="index.html#members"><span class="nav-num">06</span>メンバー</a>
+        <a href="index.html#numbers"><span class="nav-num">07</span>数字で見るSAI</a>
+        <a href="index.html#company"><span class="nav-num">09</span>会社概要</a>
+        <a href="contact.html"><span class="nav-num">—</span>お問い合わせ</a>
+    </nav>
+</div>
+
+<main>
+
+<section class="contact" id="contact">
+    <div class="sec-head" data-reveal>
+        <span class="sec-num">—</span>
+        <h2 class="sec-en">CONTACT</h2>
+        <p class="sec-ja">お問い合わせ</p>
+    </div>
+
+    <div class="contact-grid">
+
+        <!-- 左：ご案内・連絡先 -->
+        <aside class="contact-info" data-reveal>
+            <p class="contact-lead">サービスのご相談、採用、取材など<br>お気軽にお問い合わせください。</p>
+            <p class="contact-text">下記フォームからご連絡いただくか、メール・所在地の情報をご利用ください。担当より順次ご返信いたします。</p>
+
+            <dl class="contact-meta">
+                <div>
+                    <dt>Email</dt>
+                    <dd>info(at)saigroupe.com</dd>
+                </div>
+                <div>
+                    <dt>所在地</dt>
+                    <dd>東京都渋谷区</dd>
+                </div>
+                <div>
+                    <dt>受付</dt>
+                    <dd>平日 10:00 – 18:00</dd>
+                </div>
+            </dl>
+            <p class="contact-note">※ 迷惑メール対策のため「@」を「(at)」と表記しています。送信の際は「(at)」を「@」に置き換えてください。</p>
+        </aside>
+
+        <!-- 右：フォーム -->
+        <form class="contact-form" id="contactForm" novalidate data-reveal>
+            <div class="form-field">
+                <label class="form-label" for="cf-name">お名前 <span class="form-req">必須</span></label>
+                <input class="form-input" type="text" id="cf-name" name="name" autocomplete="name" required>
+                <p class="form-error" data-for="cf-name"></p>
+            </div>
+
+            <div class="form-field">
+                <label class="form-label" for="cf-company">会社名・団体名</label>
+                <input class="form-input" type="text" id="cf-company" name="company" autocomplete="organization">
+            </div>
+
+            <div class="form-row">
+                <div class="form-field">
+                    <label class="form-label" for="cf-email">メールアドレス <span class="form-req">必須</span></label>
+                    <input class="form-input" type="email" id="cf-email" name="email" autocomplete="email" required>
+                    <p class="form-error" data-for="cf-email"></p>
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="cf-tel">電話番号</label>
+                    <input class="form-input" type="tel" id="cf-tel" name="tel" autocomplete="tel">
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label class="form-label" for="cf-type">お問い合わせ種別 <span class="form-req">必須</span></label>
+                <select class="form-input" id="cf-type" name="type" required>
+                    <option value="" selected disabled>選択してください</option>
+                    <option value="サービスについて">サービスについて</option>
+                    <option value="採用について">採用について</option>
+                    <option value="取材・メディア">取材・メディア</option>
+                    <option value="その他">その他</option>
+                </select>
+                <p class="form-error" data-for="cf-type"></p>
+            </div>
+
+            <div class="form-field">
+                <label class="form-label" for="cf-message">お問い合わせ内容 <span class="form-req">必須</span></label>
+                <textarea class="form-input" id="cf-message" name="message" rows="6" required></textarea>
+                <p class="form-error" data-for="cf-message"></p>
+            </div>
+
+            <label class="form-check">
+                <input type="checkbox" id="cf-agree" name="agree" required>
+                <span><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する <span class="form-req">必須</span></span>
+            </label>
+            <p class="form-error" data-for="cf-agree"></p>
+
+            <button type="submit" class="form-submit recruit-btn">
+                送信する<i></i>
+            </button>
+            <p class="form-hint">送信ボタンを押すと、入力内容がメール作成画面に反映されます。</p>
+        </form>
+
+    </div>
+</section>
+
+</main>
+
+<!-- フッター -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <img src="logo-mark.png" alt="SAI" class="footer-logo">
+            <p class="footer-tagline">時代の先を読む戦略で、<br>価値を創造する。</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="index.html#philosophy">PHILOSOPHY</a>
+            <a href="index.html#service">SERVICE</a>
+            <a href="index.html#message">MESSAGE</a>
+            <a href="index.html#company">COMPANY</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="privacy.html">PRIVACY</a>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <small>&copy; 株式会社SAI All rights reserved.</small>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
