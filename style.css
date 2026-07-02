@@ -595,8 +595,12 @@ a:focus-visible, button:focus-visible,
 }
 .contact-lead {
     font-family: var(--mincho); font-weight: 700;
-    font-size: clamp(1.3rem, 2.6vw, 1.8rem); line-height: 1.6;
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.7;
     letter-spacing: 0.04em; margin-bottom: 1.5rem;
+    white-space: nowrap;
+}
+@media (max-width: 480px) {
+    .contact-lead { white-space: normal; }
 }
 .contact-text { color: var(--ink-dim); font-size: 0.9rem; line-height: 2; margin-bottom: 2.5rem; }
 .contact-meta { display: flex; flex-direction: column; gap: 1.3rem; margin-bottom: 2rem; }
@@ -627,9 +631,11 @@ a:focus-visible, button:focus-visible,
 }
 textarea.form-input { resize: vertical; min-height: 120px; line-height: 1.8; }
 select.form-input { appearance: none; cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239A9AA0' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    color: #FFFFFF; font-weight: 500;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FFFFFF' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
     background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.4rem;
 }
+select.form-input option { color: #1B2233; background: #FFFFFF; font-weight: 500; }
 .form-input::placeholder { color: var(--ink-dim); }
 .form-input:focus { outline: none; border-color: var(--red); background: rgba(255,255,255,0.05); box-shadow: 0 0 0 3px rgba(211,0,55,0.15); }
 .form-field.is-invalid .form-input { border-color: #FF1A4D; }
@@ -651,6 +657,20 @@ select.form-input { appearance: none; cursor: pointer;
     .contact-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
 }
+
+/* お問い合わせCTA（トップ・会社概要の下） */
+.contact-cta {
+    background: var(--black);
+    text-align: center;
+    padding-top: clamp(2rem, 5vw, 4rem);
+    display: flex; flex-direction: column; align-items: center; gap: 2rem;
+}
+.contact-cta-lead {
+    font-family: var(--mincho); font-weight: 700;
+    font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+    letter-spacing: 0.06em; color: var(--ink);
+}
+.contact-cta-btn { font-size: 1.05rem; padding: 1.1rem 2.8rem; }
 
 /* ① ホバーの変化：メンバーの丸アイコンを軽くズーム（0.2s前後 ease-out） */
 .mem-photo img { transition: transform 0.25s var(--ease), opacity 0.5s var(--ease); }
