@@ -1589,6 +1589,18 @@ body::before {
 .nav-recruit:hover span { transform: translateX(3px); }
 .nav-mobile .nav-recruit { align-self: flex-start; margin-top: 0.5rem; border-color: rgba(211,0,55,0.5); }
 
+/* ヘッダー：お問い合わせボタン（主要導線・赤の塗り） */
+.nav-contact {
+    background: var(--red);
+    border: 1px solid var(--red); border-radius: 100px;
+    padding: 0.5rem 1.3rem !important; color: #fff;
+    transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), transform 0.18s var(--ease);
+}
+.nav-contact::after { display: none !important; }
+.nav-contact:hover { background: #FF1A4D; box-shadow: 0 6px 18px rgba(255,26,77,0.35); }
+.nav-contact:active { transform: scale(0.96); }
+.nav-mobile .nav-contact { align-self: flex-start; margin-top: 0.5rem; }
+
 /* 事業部紹介：採用サイトへの補足リンク */
 .dept-intro-more {
     max-width: 1100px; margin: 2rem auto 0; text-align: center;
