@@ -593,14 +593,15 @@ a:focus-visible, button:focus-visible,
     gap: clamp(2rem, 5vw, 4.5rem);
     max-width: 1080px; margin: 0 auto; align-items: start;
 }
+/* リード文：コンテナ幅に合わせて文字を自動縮小し、常に2行で収める */
+.contact-info { container-type: inline-size; }
 .contact-lead {
     font-family: var(--mincho); font-weight: 700;
-    font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.7;
+    font-size: clamp(1rem, 2vw, 1.35rem);        /* 旧ブラウザ用フォールバック */
+    font-size: clamp(0.95rem, 5.6cqw, 1.35rem);  /* コンテナ基準で必ず収まる */
+    line-height: 1.7;
     letter-spacing: 0.04em; margin-bottom: 1.5rem;
     white-space: nowrap;
-}
-@media (max-width: 480px) {
-    .contact-lead { white-space: normal; }
 }
 .contact-text { color: var(--ink-dim); font-size: 0.9rem; line-height: 2; margin-bottom: 2.5rem; }
 .contact-meta { display: flex; flex-direction: column; gap: 1.3rem; margin-bottom: 2rem; }
