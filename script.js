@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = open ? 'hidden' : '';
     });
     links.forEach(a => a.addEventListener('click', closeMenu));
+    mobile.addEventListener('click', (e) => { if (e.target === mobile) closeMenu(); }); // ドロワー外クリックで閉じる
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 
     /* ── スクロールリビール ── */
     const reveals = document.querySelectorAll('[data-reveal]');
