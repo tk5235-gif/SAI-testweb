@@ -124,8 +124,13 @@ main, .header, .footer { position: relative; z-index: 2; }
 .nav-pc a:hover { color: #fff; }
 .nav-pc a:hover::after { width: 100%; }
 
+/* ヘッダー右側（お問い合わせボタン＋ハンバーガー）：全デバイス共通 */
+.header-actions {
+    display: flex; align-items: center;
+    gap: clamp(1rem, 2.5vw, 1.6rem);
+}
 .nav-toggle {
-    display: none; flex-direction: column;
+    display: flex; flex-direction: column;
     justify-content: space-between;
     width: 30px; height: 18px;
     background: none; border: none; cursor: pointer; z-index: 110;
@@ -158,6 +163,10 @@ main, .header, .footer { position: relative; z-index: 2; }
     font-size: 0.7rem; color: var(--ink-dim); margin-left: auto;
 }
 .nav-mobile .nav-num { color: var(--red); font-size: 0.8rem; }
+.nav-mobile a { transition: color 0.25s var(--ease), border-color 0.25s var(--ease), padding-left 0.25s var(--ease); }
+.nav-mobile a:not(.nav-contact):not(.nav-recruit):hover {
+    color: #fff; border-bottom-color: rgba(211,0,55,0.55); padding-left: 0.4rem;
+}
 
 /* ============================================================
    ① HERO
@@ -527,8 +536,6 @@ section { padding: clamp(5rem, 12vw, 11rem) clamp(1.5rem, 6vw, 6rem); position: 
    レスポンシブ（スマホ最優先）
    ============================================================ */
 @media (max-width: 900px) {
-    .nav-pc { display: none; }
-    .nav-toggle { display: flex; }
     .service-item, .service-item.reverse { grid-template-columns: 1fr; gap: 1.5rem; }
     .service-item.reverse .service-ph { order: 0; }
     .service-ph { aspect-ratio: 16 / 11; max-height: 360px; }
