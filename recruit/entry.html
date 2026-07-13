@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エントリー | 株式会社SAI 採用サイト</title>
+<meta name="description" content="株式会社SAIへのエントリーページです。営業・広告運用・事業開発・カスタマーサポートの各職種に応募できます。未経験歓迎。">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+Antique:wght@400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="recruit.css">
+</head>
+<body>
+
+<header class="header" id="header">
+    <a href="index.html" class="header-logo">
+        <img src="../logo-mark.png" alt="SAI" class="header-logo-mark">
+        <span class="header-logo-text">SAI</span>
+    </a>
+    <nav class="nav-pc">
+        <a href="interview.html">社員インタビュー</a>
+        <a href="jobs.html">仕事について</a>
+        <a href="about.html">SAIとは</a>
+        <a href="../index.html" class="nav-back"><span>←</span>コーポレート</a>
+        <a href="entry.html" class="nav-entry">エントリー</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+
+<div class="nav-mobile" id="navMobile">
+    <nav>
+        <a href="index.html"><span>←</span>採用トップ</a>
+        <a href="interview.html"><span>▸</span>社員インタビュー</a>
+        <a href="jobs.html"><span>▸</span>仕事について</a>
+        <a href="about.html"><span>▸</span>SAIとは</a>
+        <a href="index.html#entry"><span>▸</span>募集要項</a>
+        <a href="entry.html"><span>▸</span>エントリー</a>
+        <a href="../index.html"><span>←</span>コーポレートサイト</a>
+    </nav>
+</div>
+
+<main>
+
+<section class="r-page-hero">
+    <div class="r-hero-bg"></div>
+    <div class="r-page-hero-inner">
+        <p class="r-hero-eyebrow" data-reveal>ENTRY</p>
+        <h1 data-reveal>エントリー</h1>
+        <p data-reveal>経験よりも「挑戦する姿勢」を大切にしています。<br>まずは気軽に、あなたのことを聞かせてください。</p>
+    </div>
+</section>
+
+<section class="r-section">
+
+    <ul class="e-flow" data-reveal>
+        <li><b>01</b>エントリー</li>
+        <span class="e-arrow" aria-hidden="true">→</span>
+        <li><b>02</b>カジュアル面談・面接</li>
+        <span class="e-arrow" aria-hidden="true">→</span>
+        <li><b>03</b>内定</li>
+    </ul>
+
+    <div class="e-wrap">
+        <form class="entry-form" id="entryForm" novalidate data-reveal>
+
+            <div class="e-row">
+                <div class="e-field">
+                    <label class="e-label" for="en-name">お名前 <span class="e-req">必須</span></label>
+                    <input class="e-input" type="text" id="en-name" name="name" autocomplete="name" required>
+                    <p class="e-error" data-for="en-name"></p>
+                </div>
+                <div class="e-field">
+                    <label class="e-label" for="en-kana">ふりがな</label>
+                    <input class="e-input" type="text" id="en-kana" name="kana">
+                </div>
+            </div>
+
+            <div class="e-row">
+                <div class="e-field">
+                    <label class="e-label" for="en-email">メールアドレス <span class="e-req">必須</span></label>
+                    <input class="e-input" type="email" id="en-email" name="email" autocomplete="email" required>
+                    <p class="e-error" data-for="en-email"></p>
+                </div>
+                <div class="e-field">
+                    <label class="e-label" for="en-tel">電話番号</label>
+                    <input class="e-input" type="tel" id="en-tel" name="tel" autocomplete="tel">
+                </div>
+            </div>
+
+            <div class="e-row">
+                <div class="e-field">
+                    <label class="e-label" for="en-job">希望職種 <span class="e-req">必須</span></label>
+                    <select class="e-input" id="en-job" name="job" required>
+                        <option value="" selected disabled>選択してください</option>
+                        <option value="営業">営業</option>
+                        <option value="広告運用">広告運用</option>
+                        <option value="事業開発">事業開発</option>
+                        <option value="カスタマーサポート">カスタマーサポート</option>
+                        <option value="未定・相談したい">未定・相談したい</option>
+                    </select>
+                    <p class="e-error" data-for="en-job"></p>
+                </div>
+                <div class="e-field">
+                    <label class="e-label" for="en-status">現在のご状況</label>
+                    <select class="e-input" id="en-status" name="status">
+                        <option value="" selected disabled>選択してください</option>
+                        <option value="就業中">就業中</option>
+                        <option value="離職中">離職中</option>
+                        <option value="学生">学生</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="e-field">
+                <label class="e-label" for="en-message">志望動機・自己PR <span class="e-req">必須</span></label>
+                <textarea class="e-input" id="en-message" name="message" rows="7" required placeholder="現在のお仕事や興味のあること、SAIで挑戦したいことなど、自由にお書きください。"></textarea>
+                <p class="e-error" data-for="en-message"></p>
+            </div>
+
+            <label class="e-check">
+                <input type="checkbox" id="en-agree" name="agree" required>
+                <span><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する <span class="e-req">必須</span></span>
+            </label>
+            <p class="e-error" data-for="en-agree"></p>
+
+            <button type="submit" class="r-btn e-submit">エントリーする<i></i></button>
+            <p class="e-hint">送信ボタンを押すと、入力内容がメール作成画面に反映されます。</p>
+        </form>
+    </div>
+
+</section>
+
+</main>
+
+<footer class="r-footer">
+    <div class="r-footer-top">
+        <div>
+            <img src="../logo-mark.png" alt="SAI" class="r-footer-logo">
+            <p class="r-footer-tag">挑戦する仲間を、<br>募集しています。</p>
+        </div>
+        <nav class="r-footer-nav">
+            <a href="interview.html">INTERVIEW</a>
+            <a href="jobs.html">JOBS</a>
+            <a href="about.html">ABOUT SAI</a>
+            <a href="entry.html">ENTRY</a>
+            <a href="../index.html">CORPORATE</a>
+            <a href="privacy.html">PRIVACY</a>
+        </nav>
+    </div>
+    <div class="r-footer-bottom"><small>&copy; 株式会社SAI All rights reserved.</small></div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

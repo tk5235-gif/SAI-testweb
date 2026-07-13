@@ -316,4 +316,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ── エントリーフォーム（採用サイト・リアルタイム検証＋メール作成） ── */
+    const entryForm = document.getElementById('entryForm');
+    if (entryForm) {
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const setErr = (field, msg) => {
+            const wrap = field.closest('.e-field');
+            const err = entryForm.querySelector(`.e-error[data-for="${field.id}"]`);
+            const ok = !msg;
+            if (wrap) {
+                wrap.classList.toggle('is-invalid', !ok);
+                wrap.classList.toggle('is-valid', ok && field.value.trim() !== '');
+            }
+            if (err) { err.textContent = msg || ''; err.classList.toggle('is-shown', !ok); }
+            return ok;
+        };
+        const validate = (field) => {
+            if (field.type === 'checkbox') return setErr(field, field.checked ? '' : '同意が必要です。');
+            const v = field.value.trim();
+            if (field.required && !v) return setErr(field, '入力してください。');
+            if (field.type === 'email' && v && !emailRe.test(v)) return setErr(field, 'メールアドレスの形式をご確認ください。');
+            return setErr(field, '');
+        };
+        const fields = ['en-name', 'en-email', 'en-job', 'en-message', 'en-agree']
+            .map(id => document.getElementById(id)).filter(Boolean);
+        fields.forEach(f => {
+            const ev = (f.tagName === 'SELECT' || f.type === 'checkbox') ? 'change' : 'blur';
+            f.addEventListener(ev, () => validate(f));
+            f.addEventListener('input', () => { const w = f.closest('.e-field'); if (w && w.classList.contains('is-invalid')) validate(f); });
+        });
+        entryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let firstInvalid = null;
+            fields.forEach(f => { if (!validate(f) && !firstInvalid) firstInvalid = f; });
+            if (firstInvalid) { firstInvalid.focus(); return; }
+            const g = id => (document.getElementById(id).value || '').trim();
+            const subject = `【エントリー／${g('en-job')}】${g('en-name')}`;
+            const body =
+                `お名前：${g('en-name')}\n` +
+                `ふりがな：${g('en-kana')}\n` +
+                `メール：${g('en-email')}\n` +
+                `電話：${g('en-tel')}\n` +
+                `希望職種：${g('en-job')}\n` +
+                `現在の状況：${g('en-status')}\n\n` +
+                `【志望動機・自己PR】\n${g('en-message')}\n`;
+            window.location.href = `mailto:info@saigroupe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    }
+
 });
