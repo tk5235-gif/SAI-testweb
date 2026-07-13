@@ -1963,3 +1963,10 @@ body { font-weight: 500 !important; }
 .message-sign span {
     font-weight: 600 !important;
 }
+
+/* ============================================================
+   設立日カード：数字と日付を一直線に（折り返し防止）
+   ============================================================ */
+.num-line { display: inline-flex; align-items: baseline; white-space: nowrap; }
+.num-line .num-val { font-size: clamp(2rem, 4.2vw, 3.2rem) !important; }
+.num-line .num-suffix { font-size: clamp(0.95rem, 1.6vw, 1.2rem); margin-top: 0; margin-left: 0.15em; }
