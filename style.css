@@ -1147,7 +1147,7 @@ body { color: #FFFFFF !important; }
     width: 180px !important;
     height: 240px !important;
 }
-.mem-card { gap: 1.6rem !important; align-items: center !important; }
+.mem-card { gap: 1.6rem !important; align-items: flex-start !important; }
 
 /* サービス画像枠も上半身が映る縦長に */
 .service-ph { aspect-ratio: 3 / 4 !important; }
@@ -1169,12 +1169,12 @@ body { color: #FFFFFF !important; }
     opacity: 0.85 !important;
 }
 
-/* ① メンバー写真：丸アイコン（円形）で統一 */
+/* ① メンバー写真：縦長ポートレート（頭〜腰まで全体が映る） */
 .mem-photo {
-    flex: 0 0 96px !important;
-    width: 96px !important;
-    height: 96px !important;
-    border-radius: 50% !important;
+    flex: 0 0 150px !important;
+    width: 150px !important;
+    height: 200px !important;
+    border-radius: 10px !important;
     border: 1px solid var(--line) !important;
 }
 /* サービス・CEO・オフィスのプレースホルダー比率 */
