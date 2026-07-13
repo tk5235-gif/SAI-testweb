@@ -5,7 +5,7 @@
    ============================================================ */
 :root{
   --bg:#F4F6FB; --surface:#FFFFFF; --surface-2:#EEF2F9;
-  --ink:#141C32; --ink-2:#586079; --line:#E5E9F2;
+  --ink:#141C32; --ink-2:#4D5670; --line:#E5E9F2; /* ink-2を一段濃く（明るい背景でのコントラスト確保） */
   --brand:#E5103C;
   --red:#E5394E; --blue:#2F6FE0; --green:#10B083; --gold:#F0A21E; --purple:#7C5CE0;
   --mincho:'Shippori Mincho',serif; --display:'Cormorant Garamond',serif;
@@ -160,7 +160,7 @@ ul{list-style:none;}
 .r-dept-card{position:relative;}
 .r-dept-no{font-family:var(--display);font-weight:700;font-size:2.4rem;color:var(--acc,var(--brand));opacity:.5;line-height:1;}
 .r-dept-card h3{font-family:var(--gothic);font-weight:700;color:var(--ink);font-size:1.3rem;margin:.3rem 0 .8rem;}
-.r-dept-card p{color:var(--ink-2);font-size:.93rem;line-height:1.85;}
+.r-dept-card p{color:var(--ink-2);font-size:.95rem;line-height:1.85;}
 
 /* 働き方ロールカード */
 .r-roles{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
@@ -171,7 +171,7 @@ ul{list-style:none;}
 .r-role-top h3{font-family:var(--gothic);font-weight:700;font-size:1.7rem;margin-top:.3rem;}
 .r-role-body{padding:1.6rem 2rem 2rem;}
 .r-role-body ul{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.4rem;}
-.r-role-body li{position:relative;padding-left:1.3rem;color:var(--ink-2);font-size:.95rem;line-height:1.7;}
+.r-role-body li{position:relative;padding-left:1.3rem;color:var(--ink-2);font-size:.98rem;line-height:1.75;}
 .r-role-body li::before{content:'';position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--acc,var(--brand));}
 
 /* メンバー */
@@ -182,7 +182,7 @@ ul{list-style:none;}
 .r-mem-photo span{font-family:var(--display);font-size:.7rem;letter-spacing:.2em;color:var(--ink-2);}
 .r-mem-role{font-family:var(--display);font-weight:600;color:var(--brand);font-size:.8rem;letter-spacing:.12em;}
 .r-mem h4{font-family:var(--gothic);font-weight:700;color:var(--ink);font-size:1.2rem;margin:.2rem 0 .6rem;}
-.r-mem p{color:var(--ink-2);font-size:.9rem;line-height:1.8;}
+.r-mem p{color:var(--ink-2);font-size:.95rem;line-height:1.8;}
 
 /* 働く環境タイムライン */
 .r-timeline{max-width:760px;margin:0 auto;}
@@ -193,7 +193,7 @@ ul{list-style:none;}
 .r-tl-dot{width:14px;height:14px;border-radius:50%;margin:.7rem auto 0;background:var(--acc,var(--brand));box-shadow:0 0 0 4px var(--bg);z-index:1;}
 .r-tl-card{background:var(--surface);border-radius:12px;box-shadow:var(--shadow-sm);padding:.9rem 1.2rem;}
 .r-tl-card h4{font-family:var(--gothic);font-weight:700;color:var(--ink);font-size:1rem;}
-.r-tl-card p{color:var(--ink-2);font-size:.86rem;line-height:1.7;}
+.r-tl-card p{color:var(--ink-2);font-size:.9rem;line-height:1.7;}
 
 /* 代表メッセージ */
 .r-message{background:var(--surface-2);}
@@ -202,7 +202,7 @@ ul{list-style:none;}
 .r-msg-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
 .r-msg-body h3{font-family:var(--gothic);font-weight:700;color:var(--ink);font-size:clamp(1.6rem,3.5vw,2.4rem);line-height:1.45;margin-bottom:1.4rem;}
 .r-msg-body h3 em{font-style:normal;color:var(--brand);}
-.r-msg-body p{color:var(--ink-2);line-height:2;margin-bottom:1.1rem;font-size:.98rem;}
+.r-msg-body p{color:var(--ink-2);line-height:2;margin-bottom:1.1rem;font-size:1rem;}
 .r-msg-sign{margin-top:1.6rem;display:flex;align-items:center;gap:1.2rem;background:var(--surface-2);}
 .r-msg-sign .sign-name{display:flex;flex-direction:column;}
 .r-msg-sign span{display:block;color:var(--ink-2);font-size:.85rem;font-weight:700;}
@@ -540,7 +540,7 @@ ul{list-style:none;}
 .r-iv-cmp-name span{font-size:.68em;color:var(--ink-2);font-weight:500;margin-left:.4em;}
 .r-iv-qa-mini{margin-bottom:.8rem;}
 .r-iv-qa-mini dt{font-size:.76rem;font-weight:700;color:var(--acc,var(--brand));margin-bottom:.15rem;}
-.r-iv-qa-mini dd{font-size:.9rem;color:var(--ink);line-height:1.6;}
+.r-iv-qa-mini dd{font-size:.95rem;color:var(--ink);line-height:1.65;}
 .r-iv-cmp .more{margin-top:auto;padding-top:1.1rem;font-weight:700;color:var(--brand);}
 .r-iv-cmp .more span{display:inline-block;transition:transform .3s;}
 .r-iv-cmp:hover .more span{transform:translateX(4px);}

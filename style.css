@@ -7,8 +7,10 @@
     --black: #0F1422;
     --black-2: #151B2B;
     --ink: #F2F2F0;
-    --ink-dim: #9A9AA0;
-    --red: #D30037;
+    --ink-dim: #A9B1C6;          /* 青み系に統一（紺と調和・可読性UP） */
+    --red: #D30037;              /* Accent-deep：塗り・CTA用 */
+    --accent: #FF1A4D;           /* Accent-bright：文字強調用 */
+    --gold: #E9B872;             /* 信頼の差し色：数値・キッカー用 */
     --navy: #192F61;
     --navy-light: #2A4480;
     --line: rgba(255,255,255,0.10);
@@ -251,7 +253,7 @@ main, .header, .footer { position: relative; z-index: 2; }
 .hero-eyebrow {
     font-family: var(--display);
     font-size: 0.95rem; letter-spacing: 0.4em;
-    color: var(--ink-dim); margin-bottom: 2rem;
+    color: var(--gold); margin-bottom: 2rem;
 }
 .hero-copy {
     font-family: var(--mincho);
@@ -308,7 +310,7 @@ main, .header, .footer { position: relative; z-index: 2; }
 .hero-trust li { display: flex; flex-direction: column; line-height: 1.2; }
 .hero-trust strong {
     font-family: var(--display); font-size: 2rem; font-weight: 600;
-    color: var(--ink); letter-spacing: 0.02em;
+    color: var(--gold); letter-spacing: 0.02em;
 }
 .hero-trust span {
     font-size: 0.72rem; letter-spacing: 0.15em; color: var(--ink-dim);
@@ -405,7 +407,7 @@ section { padding: clamp(5rem, 12vw, 11rem) clamp(1.5rem, 6vw, 6rem); position: 
     font-size: 2.2rem; margin: 1rem 0 0.2rem;
 }
 .value-sub { font-family: var(--mincho); color: var(--ink); margin-bottom: 1.2rem; font-size: 1.05rem; }
-.value-desc { font-size: 0.88rem; color: var(--ink-dim); line-height: 1.9; }
+.value-desc { font-size: 0.98rem; color: var(--ink-dim); line-height: 1.9; }
 
 /* ============================================================
    ③ SERVICE
@@ -487,10 +489,10 @@ section { padding: clamp(5rem, 12vw, 11rem) clamp(1.5rem, 6vw, 6rem); position: 
 .num-val {
     font-family: var(--display); font-weight: 600;
     font-size: clamp(2.8rem, 7vw, 5rem); line-height: 1;
-    background: linear-gradient(160deg, var(--ink), var(--navy-light));
+    background: linear-gradient(160deg, #F7E2BC, var(--gold) 70%);
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
-.num-suffix { font-family: var(--display); font-size: 1.4rem; color: var(--red); margin-top: -1rem; }
+.num-suffix { font-family: var(--display); font-size: 1.4rem; color: var(--gold); margin-top: -1rem; }
 .num-label { font-family: var(--mincho); font-size: 0.9rem; color: var(--ink-dim); letter-spacing: 0.15em; }
 .num-note { font-size: 0.75rem; color: var(--ink-dim); margin-top: 2rem; opacity: 0.6; }
 
@@ -645,7 +647,7 @@ a:focus-visible, button:focus-visible,
     letter-spacing: 0.04em; margin-bottom: 1.5rem;
     white-space: nowrap;
 }
-.contact-text { color: var(--ink-dim); font-size: 0.9rem; line-height: 2; margin-bottom: 2.5rem; }
+.contact-text { color: var(--ink-dim); font-size: 0.95rem; line-height: 2; margin-bottom: 2.5rem; }
 .contact-meta { display: flex; flex-direction: column; gap: 1.3rem; margin-bottom: 2rem; }
 .contact-meta dt {
     font-family: var(--display); font-size: 0.72rem; letter-spacing: 0.2em;
@@ -666,7 +668,7 @@ a:focus-visible, button:focus-visible,
     background: var(--red); padding: 0.12rem 0.5rem; border-radius: 3px; font-weight: 700;
 }
 .form-input {
-    width: 100%; font-family: var(--gothic); font-size: 0.95rem; color: var(--ink);
+    width: 100%; font-family: var(--gothic); font-size: 1rem; color: var(--ink); /* 16px：スマホでの自動ズームも防ぐ */
     background: rgba(255,255,255,0.03);
     border: 1px solid var(--line); border-radius: 6px;
     padding: 0.85rem 1rem; letter-spacing: 0.03em;
@@ -757,7 +759,7 @@ img.is-loading { opacity: 0; }
 .mem-role { font-family: var(--display); font-size: 0.78rem; color: var(--red); letter-spacing: 0.15em; }
 .mem-name { font-family: var(--mincho); font-weight: 700; font-size: 1.25rem; margin: 0.3rem 0 0.9rem; letter-spacing: 0.05em; }
 .mem-body { flex: 1; min-width: 0; }
-.mem-comment { font-size: 0.83rem; color: var(--ink-dim); line-height: 1.85; }
+.mem-comment { font-size: 0.92rem; color: var(--ink-dim); line-height: 1.85; }
 
 @media (max-width: 900px) {
     .dept-members { grid-template-columns: 1fr; gap: 1.2rem; }
@@ -879,9 +881,14 @@ img.is-loading { opacity: 0; }
     -webkit-text-fill-color: #FF1A4D !important;
     font-weight: 800;
 }
-.phil-label, .value-num, .service-no, .dept-no, .mem-role, .sec-num {
-    color: #FF1A4D !important;
+.phil-label, .value-num, .service-no, .dept-no, .mem-role {
+    color: var(--accent) !important;
 }
+/* 章番号キッカーはゴールド（信頼の差し色・赤の乱用を抑える） */
+.sec-num { color: var(--gold) !important; }
+.sec-num::before { background: var(--gold) !important; }
+.sec-num.light { color: #fff !important; }
+.sec-num.light::before { background: #fff !important; }
 .phil-mini { border-left-color: #FF1A4D !important; border-left-width: 3px !important; }
 .value-sub { color: #FFFFFF !important; font-size: 1.1rem !important; }
 
