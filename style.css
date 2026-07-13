@@ -1968,7 +1968,16 @@ body { font-weight: 500 !important; }
    設立日カード：数字と日付を一直線に（折り返し防止）
    ============================================================ */
 .num-line { display: inline-flex; align-items: baseline; white-space: nowrap; }
-.num-line .num-val { font-size: clamp(2rem, 4.2vw, 3.2rem) !important; }
+.num-line .num-val { font-size: clamp(2.2rem, 5vw, 3.8rem) !important; }
+/* 2行目：日付（4月15日）を数字の真下に */
+.num-date {
+    display: block;
+    font-family: var(--mincho);
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+}
 .num-line .num-suffix {
     font-size: clamp(0.95rem, 1.6vw, 1.2rem); margin-top: 0; margin-left: 0.15em;
     /* 数字(4/15)が漢字(月/日)より下にズレないよう明朝に統一（英字フォントのオールドスタイル数字を回避） */
