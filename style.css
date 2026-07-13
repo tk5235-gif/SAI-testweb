@@ -1969,4 +1969,9 @@ body { font-weight: 500 !important; }
    ============================================================ */
 .num-line { display: inline-flex; align-items: baseline; white-space: nowrap; }
 .num-line .num-val { font-size: clamp(2rem, 4.2vw, 3.2rem) !important; }
-.num-line .num-suffix { font-size: clamp(0.95rem, 1.6vw, 1.2rem); margin-top: 0; margin-left: 0.15em; }
+.num-line .num-suffix {
+    font-size: clamp(0.95rem, 1.6vw, 1.2rem); margin-top: 0; margin-left: 0.15em;
+    /* 数字(4/15)が漢字(月/日)より下にズレないよう明朝に統一（英字フォントのオールドスタイル数字を回避） */
+    font-family: var(--mincho) !important;
+    font-feature-settings: "lnum" 1;
+}
