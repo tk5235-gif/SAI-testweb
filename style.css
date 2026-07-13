@@ -1169,13 +1169,21 @@ body { color: #FFFFFF !important; }
     opacity: 0.85 !important;
 }
 
-/* ① メンバー写真：縦長ポートレート（頭〜腰まで全体が映る） */
+/* ① メンバー写真：縦長ポートレート・大きめ（約2倍の300x400） */
 .mem-photo {
-    flex: 0 0 150px !important;
-    width: 150px !important;
-    height: 200px !important;
+    flex: 0 0 clamp(220px, 26vw, 300px) !important;
+    width: clamp(220px, 26vw, 300px) !important;
+    height: auto !important;
+    aspect-ratio: 3 / 4 !important;
     border-radius: 10px !important;
     border: 1px solid var(--line) !important;
+}
+/* 写真拡大に合わせてカードは1列の横長レイアウトに */
+.dept-members { grid-template-columns: 1fr !important; }
+/* スマホ：縦積み（写真を上に） */
+@media (max-width: 640px) {
+    .mem-card { flex-direction: column !important; }
+    .mem-photo { width: min(300px, 100%) !important; flex: 0 0 auto !important; }
 }
 /* サービス・CEO・オフィスのプレースホルダー比率 */
 .service-ph { aspect-ratio: 3 / 4 !important; }
