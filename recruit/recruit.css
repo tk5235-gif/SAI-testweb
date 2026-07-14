@@ -74,14 +74,14 @@ ul{list-style:none;}
 .nav-mobile a{font-family:var(--gothic);font-weight:700;font-size:1.4rem;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:.9rem;}
 .nav-mobile a span{color:var(--brand);font-family:var(--display);font-size:.9rem;margin-right:.6rem;}
 
-/* ── 共通：セクション ── */
-.r-section{max-width:1120px;margin:0 auto;padding:clamp(4rem,9vw,7rem) clamp(1.3rem,5vw,3rem);}
-.r-head{margin-bottom:clamp(2.2rem,5vw,3.4rem);}
-.r-label{display:inline-block;font-family:var(--display);font-weight:600;letter-spacing:.28em;font-size:.85rem;color:var(--brand);position:relative;padding-top:.9rem;margin-bottom:.9rem;}
-.r-label::before{content:'';position:absolute;top:0;left:0;width:38px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--brand),#ff7a4d);}
-.r-title{font-family:var(--gothic);font-weight:700;color:var(--ink);font-size:clamp(1.8rem,4.4vw,3rem);line-height:1.35;letter-spacing:.02em;}
+/* ── 共通：セクション（余白×凝縮：たっぷりの間と大きな英字見出し） ── */
+.r-section{max-width:1120px;margin:0 auto;padding:clamp(5rem,12vw,9.5rem) clamp(1.3rem,5vw,3rem);}
+.r-head{margin-bottom:clamp(2.8rem,6vw,4.8rem);}
+.r-label{display:inline-block;font-family:var(--display);font-weight:600;letter-spacing:.34em;font-size:1rem;color:var(--brand);position:relative;padding-top:1.4rem;margin-bottom:1.3rem;text-transform:uppercase;}
+.r-label::before{content:'';position:absolute;top:0;left:0;width:46px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--brand),#ff7a4d);}
+.r-title{font-family:var(--gothic);font-weight:700;color:var(--ink);font-size:clamp(1.95rem,5vw,3.4rem);line-height:1.4;letter-spacing:.03em;}
 .r-title em{font-style:normal;color:var(--brand);}
-.r-sub{margin-top:1rem;color:var(--ink-2);max-width:660px;line-height:1.95;font-size:clamp(.95rem,2vw,1.08rem);}
+.r-sub{margin-top:1.4rem;color:var(--ink-2);max-width:680px;line-height:2.05;font-size:clamp(.98rem,2vw,1.12rem);}
 
 /* ── ボタン ── */
 .r-btn{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--gothic);font-weight:700;font-size:1rem;
