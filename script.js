@@ -23,39 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         img.addEventListener('error', () => img.classList.remove('is-loading'), { once: true });
     });
 
-    /* ── PEOPLE スライダー（主役写真がグローしながら自動切替） ── */
-    const peopleSlider = document.getElementById('peopleSlider');
-    if (peopleSlider) {
-        const slides = peopleSlider.querySelectorAll('.ps-slide');
-        const thumbs = peopleSlider.querySelectorAll('.ps-thumb');
-        const elRole = document.getElementById('psRole');
-        const elInit = document.getElementById('psInitials');
-        const elAffil = document.getElementById('psAffil');
-        const elNum = document.getElementById('psNum');
-        const n = slides.length;
-        let idx = 0, timer = null;
-        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const show = (i) => {
-            idx = (i + n) % n;
-            slides.forEach((s, k) => s.classList.toggle('is-active', k === idx));
-            thumbs.forEach((t, k) => t.classList.toggle('is-active', k === idx));
-            const t = thumbs[idx];
-            if (elRole) elRole.textContent = t.dataset.role || '';
-            if (elInit) elInit.textContent = t.dataset.initials || '';
-            if (elAffil) elAffil.textContent = t.dataset.affil || '';
-            if (elNum) elNum.textContent = String(idx + 1).padStart(2, '0');
-        };
-        const start = () => { if (reduce) return; stop(); timer = setInterval(() => show(idx + 1), 4500); };
-        const stop = () => { if (timer) clearInterval(timer); timer = null; };
-        thumbs.forEach((t, k) => t.addEventListener('click', () => { show(k); start(); }));
-        const prev = document.getElementById('psPrev'), next = document.getElementById('psNext');
-        if (prev) prev.addEventListener('click', () => { show(idx - 1); start(); });
-        if (next) next.addEventListener('click', () => { show(idx + 1); start(); });
-        peopleSlider.addEventListener('mouseenter', stop);
-        peopleSlider.addEventListener('mouseleave', start);
-        show(0); start();
-    }
-
     /* ── HERO 写真クロスフェード ── */
     const heroSlides = document.querySelectorAll('.hero-slide');
     if (heroSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
