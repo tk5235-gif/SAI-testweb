@@ -263,9 +263,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (hero) window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
-        // URLハッシュ（#cs / #sales）で初期タブを選択
-        const initRole = location.hash === '#cs' ? 'cs' : (location.hash === '#sales' ? 'sales' : null);
-        if (initRole) wsActivate(initRole);
+        // URLハッシュ（#sales / #cs / #ad）で初期タブを選択
+        const roleFromHash = (location.hash || '').replace('#', '');
+        const hasRole = [...wsTabs].some(t => t.dataset.role === roleFromHash);
+        if (hasRole) wsActivate(roleFromHash);
     }
 
     /* ── お問い合わせフォーム（リアルタイム検証＋メール作成） ── */
