@@ -306,6 +306,39 @@
         <h2 class="sec-en">MEMBERS</h2>
         <p class="sec-ja">メンバー</p>
     </div>
+
+    <!-- PEOPLE スライダー（主役写真がグローしながら自動切替） -->
+    <div class="people-slider" id="peopleSlider" data-reveal>
+        <div class="ps-main">
+            <div class="ps-slide is-active" style="background-image:url('images/members/itou.jpg')"></div>
+            <div class="ps-slide" style="background-image:url('images/members/yoshinaga.jpg')"></div>
+            <div class="ps-slide" style="background-image:url('images/members/fujihira.jpg')"></div>
+            <div class="ps-slide" style="background-image:url('member2.jpg')"></div>
+            <div class="ps-scrim"></div>
+            <span class="ps-role" id="psRole">営業</span>
+            <div class="ps-caption">
+                <span class="ps-initials" id="psInitials">I.Y.</span>
+                <span class="ps-affil" id="psAffil">営業部 ／ 2018年入社</span>
+            </div>
+            <span class="ps-count"><b id="psNum">01</b><i>/ 04</i></span>
+        </div>
+        <div class="ps-side">
+            <div class="ps-thumbs" id="psThumbs">
+                <button class="ps-thumb is-active" data-i="0" style="background-image:url('images/members/itou.jpg')" data-role="営業" data-initials="I.Y." data-affil="営業部 ／ 2018年入社" aria-label="伊藤 義将"><span>営業</span></button>
+                <button class="ps-thumb" data-i="1" style="background-image:url('images/members/yoshinaga.jpg')" data-role="営業" data-initials="Y.Y." data-affil="営業部 ／ 2022年入社" aria-label="吉永 友太郎"><span>営業</span></button>
+                <button class="ps-thumb" data-i="2" style="background-image:url('images/members/fujihira.jpg')" data-role="広告運用" data-initials="F.Y." data-affil="広告運用部 ／ 2019年入社" aria-label="藤平 勇太"><span>広告運用</span></button>
+                <button class="ps-thumb" data-i="3" style="background-image:url('member2.jpg')" data-role="事業開発" data-initials="M.T." data-affil="事業開発部 ／ 2018年入社" aria-label="真辺 匠"><span>事業開発</span></button>
+            </div>
+            <div class="ps-nav">
+                <span class="ps-nav-label">PEOPLE</span>
+                <div class="ps-nav-btns">
+                    <button class="ps-prev" id="psPrev" aria-label="前のメンバー">←</button>
+                    <button class="ps-next" id="psNext" aria-label="次のメンバー">→</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="dept-list">
 
         <div class="dept" data-reveal>
