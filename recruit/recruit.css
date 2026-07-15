@@ -706,23 +706,21 @@ select.e-input{appearance:none;cursor:pointer;background-image:url("data:image/s
 @media(max-width:520px){.r-people{grid-template-columns:1fr;max-width:340px;}}
 
 /* ============================================================
-   HERO 背景イラスト（右側に敷き、左は白くフェード）
+   HERO フルブリード背景イラスト（全面に敷き、テキストを重ねる）
    ============================================================ */
+.r-hero-illustrated{padding-top:0;}
 .r-hero-illust{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
-.r-hero-illust img{position:absolute;top:50%;right:-4%;transform:translateY(-50%);
-  width:min(64%,860px);height:auto;opacity:.6;
-  -webkit-mask-image:linear-gradient(105deg,transparent 8%,#000 46%);
-          mask-image:linear-gradient(105deg,transparent 8%,#000 46%);
-  animation:heroFloatY 7s ease-in-out infinite alternate;}
-@keyframes heroFloatY{from{transform:translateY(-54%);}to{transform:translateY(-46%);}}
-/* 左側の可読性確保：背景色→透明のスクリム */
+.r-hero-illust img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:center 42%;opacity:1;}
+/* コピーを乗せる側を軽く明るくして可読性を確保（イラストは透けて見える） */
 .r-hero-illustrated::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(100deg,var(--bg) 26%,rgba(244,246,251,.55) 52%,transparent 78%);}
+  background:
+    linear-gradient(100deg,rgba(244,246,251,.9) 0%,rgba(244,246,251,.66) 32%,rgba(244,246,251,.12) 58%,transparent 76%),
+    linear-gradient(to bottom,transparent 55%,rgba(244,246,251,.55) 100%);}
 .r-hero-illustrated .r-hero-inner{position:relative;z-index:2;}
-@media(prefers-reduced-motion:reduce){.r-hero-illust img{animation:none;}}
 @media(max-width:860px){
-  .r-hero-illust img{right:-14%;width:118%;opacity:.24;
-    -webkit-mask-image:linear-gradient(to top,transparent 6%,#000 40%);
-            mask-image:linear-gradient(to top,transparent 6%,#000 40%);}
-  .r-hero-illustrated::before{background:linear-gradient(180deg,var(--bg) 30%,rgba(244,246,251,.5) 60%,transparent 100%);}
+  .r-hero-illust img{object-position:center 38%;}
+  .r-hero-illustrated::before{background:
+    linear-gradient(160deg,rgba(244,246,251,.86) 0%,rgba(244,246,251,.55) 38%,rgba(244,246,251,.25) 62%,transparent 88%),
+    linear-gradient(to bottom,transparent 50%,rgba(244,246,251,.7) 100%);}
 }
