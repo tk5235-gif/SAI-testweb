@@ -48,7 +48,8 @@ ul{list-style:none;}
 .header-logo{display:flex;align-items:center;gap:.6rem;}
 .header-logo-mark{width:36px;height:36px;}
 .header-logo-text{font-family:var(--display);font-size:1.5rem;font-weight:600;letter-spacing:.14em;color:var(--ink);padding-left:.1em;}
-.nav-pc{display:flex;align-items:center;gap:1.8rem;}
+.nav-pc{display:none;} /* 全デバイスでハンバーガーに集約 */
+.header-actions{display:flex;align-items:center;gap:clamp(.9rem,2.2vw,1.5rem);}
 .nav-pc a{font-family:var(--gothic);font-weight:700;font-size:.92rem;letter-spacing:.06em;color:var(--ink);position:relative;transition:color .3s;}
 .nav-pc a:not(.nav-back)::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--brand);transition:width .35s var(--ease);}
 .nav-pc a:not(.nav-back):hover::after{width:100%;}
@@ -61,18 +62,40 @@ ul{list-style:none;}
 .nav-entry:hover{color:#fff!important;transform:translateY(-1px);}
 
 /* ハンバーガー */
-.nav-toggle{display:none;flex-direction:column;justify-content:space-between;width:28px;height:16px;background:none;border:none;cursor:pointer;z-index:110;}
+.nav-toggle{display:flex;flex-direction:column;justify-content:space-between;width:28px;height:16px;background:none;border:none;cursor:pointer;z-index:110;}
 .nav-toggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;transition:all .4s var(--ease);}
 .nav-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .nav-toggle.is-open span:nth-child(2){opacity:0;}
 .nav-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 .nav-mobile{position:fixed;inset:0;z-index:105;background:var(--surface);
-  display:flex;align-items:center;justify-content:center;
-  clip-path:circle(0% at 100% 0%);transition:clip-path .6s var(--ease);}
+  display:flex;align-items:center;justify-content:center;overflow-y:auto;
+  clip-path:circle(0% at 100% 0%);transition:clip-path .7s var(--ease);}
 .nav-mobile.is-open{clip-path:circle(150% at 100% 0%);}
-.nav-mobile nav{display:flex;flex-direction:column;gap:1.4rem;width:80%;max-width:360px;}
-.nav-mobile a{font-family:var(--gothic);font-weight:700;font-size:1.4rem;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:.9rem;}
-.nav-mobile a span{color:var(--brand);font-family:var(--display);font-size:.9rem;margin-right:.6rem;}
+
+/* ── ORIX風 階層メニュー ── */
+.r-menu{width:min(1000px,86vw);display:grid;grid-template-columns:1.15fr .85fr;
+  gap:clamp(2rem,6vw,5rem);align-items:center;padding:6rem 0 3rem;}
+.r-menu-main{display:flex;flex-direction:column;}
+.r-menu-main a{display:flex;align-items:baseline;gap:1rem;
+  font-family:var(--gothic);font-weight:700;font-size:clamp(1.5rem,3.6vw,2.3rem);color:var(--ink);
+  padding:clamp(.7rem,1.6vh,1.1rem) 0;border-bottom:1px solid var(--line);
+  transition:color .3s var(--ease),padding-left .3s var(--ease);}
+.r-menu-main a:hover{color:var(--brand);padding-left:.6rem;}
+.r-menu-en{font-family:var(--display);font-weight:600;font-size:.72em;letter-spacing:.14em;
+  color:var(--brand);min-width:5.2em;font-size:clamp(.7rem,1.4vw,.9rem);}
+.r-menu-sub{display:flex;flex-direction:column;gap:.6rem;}
+.r-menu-sub-h{font-family:var(--display);letter-spacing:.2em;font-size:.78rem;color:var(--ink-2);
+  font-weight:700;margin:1.2rem 0 .3rem;text-transform:uppercase;}
+.r-menu-sub-h:first-child{margin-top:0;}
+.r-menu-sub-links{display:flex;flex-wrap:wrap;gap:.6rem .8rem;}
+.r-menu-sub-links a{font-weight:700;font-size:.9rem;color:var(--ink-2);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:100px;padding:.5rem 1.1rem;
+  transition:color .25s var(--ease),border-color .25s var(--ease),background .25s var(--ease);}
+.r-menu-sub-links a:hover{color:var(--brand);border-color:var(--brand);background:#fff;}
+@media(max-width:760px){
+  .r-menu{grid-template-columns:1fr;gap:2rem;padding:5rem 0 2.5rem;}
+  .r-menu-main a{font-size:clamp(1.4rem,6vw,1.9rem);}
+}
 
 /* ── 共通：セクション（余白×凝縮：たっぷりの間と大きな英字見出し） ── */
 .r-section{max-width:1120px;margin:0 auto;padding:clamp(5rem,12vw,9.5rem) clamp(1.3rem,5vw,3rem);}
