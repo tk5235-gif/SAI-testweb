@@ -704,3 +704,21 @@ select.e-input{appearance:none;cursor:pointer;background-image:url("data:image/s
 @media(max-width:820px){.r-people{grid-template-columns:1fr 1fr;gap:1.4rem;}
   .r-person-catch{font-size:1rem;min-height:0;}}
 @media(max-width:520px){.r-people{grid-template-columns:1fr;max-width:340px;}}
+
+/* ============================================================
+   HERO 2カラム（左：コピー＋CTA／右：イラスト）
+   ============================================================ */
+.r-hero-split{padding-top:clamp(6rem,10vw,8rem);}
+.r-hero-grid{position:relative;z-index:1;width:100%;max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(1.5rem,4vw,3.5rem);}
+.r-hero-split .r-hero-inner{max-width:none;}
+.r-hero-visual{position:relative;}
+.r-hero-visual img{width:100%;height:auto;display:block;
+  filter:drop-shadow(0 30px 60px rgba(20,28,50,.14));
+  animation:heroFloatY 6s ease-in-out infinite alternate;}
+@keyframes heroFloatY{from{transform:translateY(-8px);}to{transform:translateY(8px);}}
+@media(prefers-reduced-motion:reduce){.r-hero-visual img{animation:none;}}
+@media(max-width:860px){
+  .r-hero-grid{grid-template-columns:1fr;gap:2rem;}
+  .r-hero-visual{order:-1;max-width:460px;margin:0 auto;}
+}
