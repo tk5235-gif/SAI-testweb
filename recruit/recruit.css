@@ -615,10 +615,16 @@ body{font-weight:500;}
 /* ============================================================
    エントリーページ（entry.html）
    ============================================================ */
-.e-flow{display:flex;justify-content:center;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:3rem;list-style:none;}
-.e-flow li{display:flex;align-items:center;gap:.6rem;background:var(--surface);border-radius:100px;box-shadow:var(--shadow-sm);padding:.7rem 1.5rem;font-weight:700;font-size:.92rem;color:var(--ink);}
+.e-flow{display:flex;justify-content:center;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:3rem;list-style:none;}
+.e-flow li{display:flex;align-items:center;gap:.5rem;background:var(--surface);border-radius:100px;box-shadow:var(--shadow-sm);padding:.6rem 1.05rem;font-weight:700;font-size:.85rem;color:var(--ink);white-space:nowrap;}
 .e-flow li b{font-family:var(--display);font-weight:600;color:var(--brand);letter-spacing:.05em;}
-.e-arrow{color:var(--ink-2);font-weight:700;}
+.e-arrow{color:var(--ink-2);font-weight:700;font-size:.9rem;}
+/* 狭い画面：縦並びにして矢印が行末に取り残されないように */
+@media(max-width:860px){
+  .e-flow{flex-direction:column;gap:.45rem;}
+  .e-flow li{width:100%;max-width:320px;justify-content:center;}
+  .e-arrow{transform:rotate(90deg);}
+}
 .e-wrap{max-width:760px;margin:0 auto;}
 .entry-form{display:flex;flex-direction:column;gap:1.5rem;background:var(--surface);border-radius:18px;box-shadow:var(--shadow);padding:clamp(1.6rem,4.5vw,3rem);}
 .e-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
