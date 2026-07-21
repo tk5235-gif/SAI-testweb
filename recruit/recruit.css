@@ -8,7 +8,7 @@
   --ink:#141C32; --ink-2:#4D5670; --line:#E5E9F2; /* ink-2を一段濃く（明るい背景でのコントラスト確保） */
   --brand:#E5103C;
   --red:#E5394E; --blue:#2F6FE0; --green:#10B083; --gold:#F0A21E; --purple:#7C5CE0;
-  --mincho:'Shippori Mincho',serif; --display:'Cormorant Garamond',serif;
+  --display:'Cormorant Garamond',serif; /* 和文=gothic / 英字装飾=display の2書体に統一 */
   --gothic:'Zen Kaku Gothic Antique',sans-serif;
   --ease:cubic-bezier(0.16,1,0.3,1);
   --shadow:0 14px 40px rgba(20,28,50,0.10);
