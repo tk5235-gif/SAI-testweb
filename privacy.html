@@ -26,36 +26,30 @@
     </a>
     <div class="header-actions">
         <a href="contact.html" class="nav-contact">お問い合わせ</a>
-        <button class="nav-toggle" id="navToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
     </div>
 </header>
 
-<!-- モバイルメニュー -->
-<div class="nav-mobile" id="navMobile">
-    <nav class="c-menu">
-        <div class="c-menu-main">
-            <a href="index.html#philosophy"><span class="c-menu-en">PHILOSOPHY</span>企業理念</a>
-            <a href="index.html#service"><span class="c-menu-en">SERVICE</span>事業内容</a>
-            <a href="index.html#message"><span class="c-menu-en">MESSAGE</span>代表メッセージ</a>
-            <a href="index.html#company"><span class="c-menu-en">COMPANY</span>会社概要</a>
-            <a href="contact.html"><span class="c-menu-en">CONTACT</span>お問い合わせ</a>
-        </div>
-        <div class="c-menu-sub">
-            <p class="c-menu-sub-h">詳しく見る</p>
-            <div class="c-menu-sub-links">
-                <a href="index.html#dept-intro">事業部紹介</a>
-                <a href="index.html#strength">強み</a>
-                <a href="index.html#members">メンバー</a>
-                <a href="index.html#numbers">数字で見るSAI</a>
-                <a href="index.html#service-reel">提供サービス</a>
-            </div>
-            <p class="c-menu-sub-h">その他</p>
-            <div class="c-menu-sub-links">
-                <a href="recruit/index.html">採用サイト →</a>
-                <a href="privacy.html">プライバシーポリシー</a>
-            </div>
-        </div>
-    </nav>
+<div class="menu-wrapper">
+  <input type="checkbox" id="menu-toggle" hidden>
+
+  <label class="menu-icon" for="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <div class="overlay"></div>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html#philosophy">企業理念</a></li>
+      <li><a href="index.html#service">事業内容</a></li>
+      <li><a href="index.html#members">メンバー</a></li>
+      <li><a href="index.html#company">会社概要</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+      <li><a href="recruit/index.html">採用サイト</a></li>
+    </ul>
+  </nav>
 </div>
 
 <main>

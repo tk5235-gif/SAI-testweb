@@ -27,34 +27,31 @@
     </a>
         <div class="header-actions">
         <a href="entry.html" class="nav-entry">エントリー</a>
-        <button class="nav-toggle" id="navToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
     </div>
 </header>
 
-<!-- モバイルメニュー -->
-<div class="nav-mobile" id="navMobile">
-    <nav class="r-menu">
-        <div class="r-menu-main">
-            <a href="index.html"><span class="r-menu-en">TOP</span>採用トップ</a>
-            <a href="about.html"><span class="r-menu-en">ABOUT</span>SAIとは</a>
-            <a href="jobs.html"><span class="r-menu-en">JOBS</span>仕事について</a>
-            <a href="interview.html"><span class="r-menu-en">INTERVIEW</span>社員インタビュー</a>
-            <a href="entry.html"><span class="r-menu-en">ENTRY</span>エントリー</a>
-        </div>
-        <div class="r-menu-sub">
-            <p class="r-menu-sub-h">職種を知る</p>
-            <div class="r-menu-sub-links">
-                <a href="work-style.html#sales">営業職</a>
-                <a href="work-style.html#cs">カスタマーサポート職</a>
-                <a href="work-style.html#ad">広告戦略職</a>
-            </div>
-            <p class="r-menu-sub-h">その他</p>
-            <div class="r-menu-sub-links">
-                <a href="../index.html">コーポレートサイト</a>
-                <a href="privacy.html">プライバシーポリシー</a>
-            </div>
-        </div>
-    </nav>
+<div class="menu-wrapper">
+  <input type="checkbox" id="menu-toggle" hidden>
+
+  <label class="menu-icon" for="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <div class="overlay"></div>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">採用トップ</a></li>
+      <li><a href="about.html">SAIとは</a></li>
+      <li><a href="jobs.html">仕事について</a></li>
+      <li><a href="work-style.html">働き方</a></li>
+      <li><a href="interview.html">社員インタビュー</a></li>
+      <li><a href="entry.html">エントリー</a></li>
+      <li><a href="../index.html">コーポレートサイト</a></li>
+    </ul>
+  </nav>
 </div>
 
 <main>

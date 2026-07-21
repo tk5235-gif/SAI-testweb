@@ -758,3 +758,33 @@ select.e-input{appearance:none;cursor:pointer;background-image:url("data:image/s
     .ws-hero-title { font-size: clamp(1.4rem, 7vw, 1.85rem); letter-spacing: 0; line-height: 1.45; }
     .ws-hero-title br { display: none; }
 }
+
+/* ============================================================
+   ハンバーガーメニュー（CSSのみ・チェックボックス方式）
+   ============================================================ */
+.menu-wrapper{position:relative;}
+.menu-icon{position:fixed;top:1.4rem;right:clamp(1.2rem,4vw,3rem);z-index:120;
+  display:flex;flex-direction:column;justify-content:space-between;width:28px;height:16px;cursor:pointer;}
+.menu-icon span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;
+  transition:transform .4s var(--ease),opacity .3s var(--ease);}
+#menu-toggle:checked ~ .menu-icon span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#menu-toggle:checked ~ .menu-icon span:nth-child(2){opacity:0;}
+#menu-toggle:checked ~ .menu-icon span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.overlay{position:fixed;inset:0;z-index:100;background:rgba(20,28,50,.45);backdrop-filter:blur(3px);
+  opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s;}
+#menu-toggle:checked ~ .overlay{opacity:1;visibility:visible;}
+
+.menu{position:fixed;top:0;right:0;z-index:110;width:min(340px,82vw);height:100%;
+  background:var(--surface);box-shadow:-16px 0 44px rgba(20,28,50,.14);
+  padding:5.5rem 2.2rem 2.5rem;overflow-y:auto;
+  transform:translateX(100%);transition:transform .45s var(--ease);}
+#menu-toggle:checked ~ .menu{transform:translateX(0);}
+.menu ul{list-style:none;display:flex;flex-direction:column;}
+.menu li + li{border-top:1px solid var(--line);}
+.menu a{display:block;padding:1.05rem 0;font-family:var(--gothic);font-weight:700;font-size:1.05rem;
+  color:var(--ink);letter-spacing:.04em;transition:color .25s var(--ease),padding-left .25s var(--ease);}
+.menu a:hover{color:var(--brand);padding-left:.4rem;}
+@media(max-width:600px){.menu-icon{top:1.25rem;}}
+/* 固定アイコン分の余白をヘッダー右側に確保 */
+.header-actions{padding-right:2.8rem;}

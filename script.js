@@ -58,23 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    /* ── ハンバーガーメニュー ── */
-    const toggle = document.getElementById('navToggle');
-    const mobile = document.getElementById('navMobile');
-    const links = mobile.querySelectorAll('a');
-    const closeMenu = () => {
-        toggle.classList.remove('is-open');
-        mobile.classList.remove('is-open');
-        document.body.style.overflow = '';
-    };
-    toggle.addEventListener('click', () => {
-        const open = mobile.classList.toggle('is-open');
-        toggle.classList.toggle('is-open', open);
-        document.body.style.overflow = open ? 'hidden' : '';
-    });
-    links.forEach(a => a.addEventListener('click', closeMenu));
-    mobile.addEventListener('click', (e) => { if (e.target === mobile) closeMenu(); }); // ドロワー外クリックで閉じる
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    /* ── ハンバーガーメニュー（開閉はCSSのみ。JSは閉じる補助と背景スクロール固定だけ） ── */
+    const menuToggle = document.getElementById('menu-toggle');
+    if (menuToggle) {
+        const closeMenu = () => { menuToggle.checked = false; document.body.style.overflow = ''; };
+        menuToggle.addEventListener('change', () => {
+            document.body.style.overflow = menuToggle.checked ? 'hidden' : '';
+        });
+        document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', closeMenu));
+        const overlay = document.querySelector('.overlay');
+        if (overlay) overlay.addEventListener('click', closeMenu);
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    }
 
     /* ── スクロールリビール ── */
     const reveals = document.querySelectorAll('[data-reveal]');
