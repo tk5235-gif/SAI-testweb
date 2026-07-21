@@ -163,8 +163,8 @@ ul{list-style:none;}
 .r-numbers{background:var(--surface-2);}
 .r-num-card{background:var(--surface);border-radius:18px;box-shadow:var(--shadow-sm);padding:2.4rem 1rem;text-align:center;}
 .r-num-card b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(2.6rem,6vw,4.2rem);line-height:1;color:var(--acc,var(--brand));font-variant-numeric:tabular-nums;}
-.r-num-card .suf{font-size:.45em;margin-left:.1em;}
-.r-num-card span{display:block;margin-top:.6rem;font-weight:700;color:var(--ink-2);font-size:.9rem;letter-spacing:.08em;}
+.r-num-card .suf{display:inline-block;font-size:1.7rem;margin-left:.12em;color:var(--acc,var(--brand));font-weight:700;}
+.r-num-card span{display:block;margin-top:.6rem;font-weight:700;color:var(--ink-2);font-size:1.05rem;letter-spacing:.06em;}
 .r-people{display:grid;grid-template-columns:1fr 1.6fr;gap:1.4rem;margin-top:1.4rem;}
 .r-people-item{background:var(--surface);border-radius:18px;box-shadow:var(--shadow-sm);padding:2rem;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:.8rem;}
 .r-people-label{font-weight:700;color:var(--ink-2);letter-spacing:.1em;font-size:.92rem;}
@@ -746,4 +746,15 @@ select.e-input{appearance:none;cursor:pointer;background-image:url("data:image/s
   .r-hero-illustrated::before{background:
     linear-gradient(160deg,rgba(244,246,251,.86) 0%,rgba(244,246,251,.55) 38%,rgba(244,246,251,.25) 62%,transparent 88%),
     linear-gradient(to bottom,transparent 50%,rgba(244,246,251,.7) 100%);}
+}
+
+/* ============================================================
+   モバイル：主要見出しを1行に収める
+   ============================================================ */
+@media (max-width: 520px) {
+    /* 「SAIで働く、3つの理由。」等が2行に折れないように */
+    .r-title { font-size: clamp(1.45rem, 7.3vw, 1.9rem); letter-spacing: 0; }
+    /* 「職種で見る、SAIの働き方。」を1行に（<br>は解除して自然に収める） */
+    .ws-hero-title { font-size: clamp(1.4rem, 7vw, 1.85rem); letter-spacing: 0; line-height: 1.45; }
+    .ws-hero-title br { display: none; }
 }
