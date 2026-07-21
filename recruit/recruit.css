@@ -131,7 +131,7 @@ ul{list-style:none;}
 .r-hero-eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.35em;color:var(--brand);font-size:1rem;margin-bottom:1.6rem;}
 .r-hero h1{font-family:var(--gothic);font-weight:700;font-size:clamp(2.6rem,8vw,6rem);line-height:1.22;letter-spacing:.01em;color:var(--ink);}
 .r-hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--brand),#ff7a3d);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.r-hero-lead{margin-top:1.8rem;color:var(--ink-2);font-size:clamp(1rem,2.2vw,1.3rem);font-weight:500;line-height:1.9;}
+.r-hero-lead{margin-top:1.8rem;color:var(--ink);font-size:clamp(1rem,2.2vw,1.3rem);font-weight:700;line-height:1.9;}
 .r-hero-cta{margin-top:2.6rem;display:flex;gap:1rem;flex-wrap:wrap;}
 .r-hero-stats{margin-top:3rem;display:flex;gap:clamp(1.5rem,4vw,3rem);flex-wrap:wrap;}
 .r-hero-stats div{display:flex;flex-direction:column;}
@@ -795,3 +795,6 @@ select.e-input{appearance:none;cursor:pointer;background-image:url("data:image/s
 .menu a{display:block;padding:1.05rem 0;font-family:var(--gothic);font-weight:700;font-size:1.05rem;
   color:var(--ink);letter-spacing:.04em;transition:color .25s var(--ease),padding-left .25s var(--ease);}
 .menu a:hover{color:var(--brand);padding-left:.4rem;}
+
+/* HEROリード文は濃く（後方の font-weight:500 一括指定より優先） */
+.r-hero-lead{font-weight:700;}
