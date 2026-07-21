@@ -44,7 +44,7 @@ ul{list-style:none;}
   display:flex;align-items:center;justify-content:space-between;
   padding:1.1rem clamp(1.2rem,4vw,3rem);
   transition:background .4s,box-shadow .4s,padding .4s;}
-.header.is-scrolled{background:rgba(255,255,255,.86);backdrop-filter:blur(12px);box-shadow:0 4px 20px rgba(20,28,50,.07);padding-top:.8rem;padding-bottom:.8rem;}
+.header.is-scrolled{background:rgba(255,255,255,.96);box-shadow:0 4px 20px rgba(20,28,50,.07);padding-top:.8rem;padding-bottom:.8rem;}
 .header-logo{display:flex;align-items:center;gap:.6rem;}
 .header-logo-mark{width:36px;height:36px;}
 .header-logo-text{font-family:var(--display);font-size:1.5rem;font-weight:600;letter-spacing:.14em;color:var(--ink);padding-left:.1em;}
@@ -763,7 +763,7 @@ select.e-input{appearance:none;cursor:pointer;background-image:url("data:image/s
    ハンバーガーメニュー（CSSのみ・チェックボックス方式）
    ============================================================ */
 .menu-wrapper{position:relative;}
-.menu-icon{position:fixed;top:1.4rem;right:clamp(1.2rem,4vw,3rem);z-index:120;
+.menu-icon{position:relative;z-index:120;
   display:flex;flex-direction:column;justify-content:space-between;width:28px;height:16px;cursor:pointer;}
 .menu-icon span{display:block;width:100%;height:2px;background:var(--ink);border-radius:2px;
   transition:transform .4s var(--ease),opacity .3s var(--ease);}
@@ -785,6 +785,3 @@ select.e-input{appearance:none;cursor:pointer;background-image:url("data:image/s
 .menu a{display:block;padding:1.05rem 0;font-family:var(--gothic);font-weight:700;font-size:1.05rem;
   color:var(--ink);letter-spacing:.04em;transition:color .25s var(--ease),padding-left .25s var(--ease);}
 .menu a:hover{color:var(--brand);padding-left:.4rem;}
-@media(max-width:600px){.menu-icon{top:1.25rem;}}
-/* 固定アイコン分の余白をヘッダー右側に確保 */
-.header-actions{padding-right:2.8rem;}
