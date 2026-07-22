@@ -798,3 +798,18 @@ select.e-input{appearance:none;cursor:pointer;background-image:url("data:image/s
 
 /* HEROリード文は濃く（後方の font-weight:500 一括指定より優先） */
 .r-hero-lead{font-weight:700;}
+
+/* ============================================================
+   事業部紹介：横長・縦低めカード（コーポレートと同形式）
+   ============================================================ */
+.r-dept-list{display:grid;grid-template-columns:1fr;gap:1rem;max-width:1120px;margin:0 auto;}
+.r-dept-list .r-dept-card{
+  display:grid;grid-template-columns:4rem 250px 1fr;align-items:center;
+  column-gap:clamp(1.2rem,3vw,2.4rem);padding:1.3rem clamp(1.4rem,3vw,2.2rem);}
+.r-dept-list .r-dept-no{font-size:2.4rem;margin:0;}
+.r-dept-list .r-dept-card h3{margin:0;font-size:1.25rem;}
+.r-dept-list .r-dept-card p{margin:0;}
+@media(max-width:760px){
+  .r-dept-list .r-dept-card{grid-template-columns:3rem 1fr;row-gap:.5rem;padding:1.2rem 1.3rem;}
+  .r-dept-list .r-dept-card p{grid-column:1 / -1;}
+}
