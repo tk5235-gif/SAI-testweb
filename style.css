@@ -1184,15 +1184,16 @@ body { color: #FFFFFF !important; }
     opacity: 0.85 !important;
 }
 
-/* ① メンバー写真：縦長ポートレート・大きめ（約2倍の300x400） */
+/* ① メンバー写真：横位置（4:3）で頭〜胸を見せる */
 .mem-photo {
-    flex: 0 0 clamp(220px, 26vw, 300px) !important;
-    width: clamp(220px, 26vw, 300px) !important;
+    flex: 0 0 clamp(260px, 30vw, 380px) !important;
+    width: clamp(260px, 30vw, 380px) !important;
     height: auto !important;
-    aspect-ratio: 3 / 4 !important;
+    aspect-ratio: 4 / 3 !important;
     border-radius: 10px !important;
     border: 1px solid var(--line) !important;
 }
+.mem-photo img { object-position: center 30% !important; }
 /* 写真拡大に合わせてカードは1列の横長レイアウトに */
 .dept-members { grid-template-columns: 1fr !important; }
 /* スマホ：縦積み（写真を上に） */
