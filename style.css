@@ -719,7 +719,7 @@ select.form-input option:disabled { color: #8A8F9C !important; }
 .contact-cta {
     background: var(--black);
     text-align: center;
-    padding-top: clamp(2rem, 5vw, 4rem);
+    padding-top: clamp(4.5rem, 11vw, 10rem);
     display: flex; flex-direction: column; align-items: center; gap: 2rem;
 }
 .contact-cta-lead {
