@@ -2045,3 +2045,43 @@ body { font-weight: 500 !important; }
     transition: color 0.25s var(--ease), padding-left 0.25s var(--ease);
 }
 .menu a:hover { color: var(--accent); padding-left: 0.4rem; }
+
+/* ============================================================
+   事業内容：写真なしナンバーカード（2×2）
+   ============================================================ */
+.svc-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: clamp(1.2rem, 2.5vw, 2rem);
+    max-width: 1100px; margin: 0 auto;
+}
+.svc-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid var(--line); border-radius: 18px;
+    padding: clamp(1.8rem, 3.5vw, 2.8rem);
+    transition: transform 0.45s var(--ease), border-color 0.45s, box-shadow 0.45s;
+}
+.svc-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(211,0,55,0.45);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.35);
+}
+.svc-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.svc-no {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(3rem, 6vw, 4.2rem); line-height: 1;
+    color: var(--gold);
+}
+.svc-en {
+    font-family: var(--display); font-weight: 600;
+    font-size: 0.72rem; letter-spacing: 0.18em; text-align: right;
+    color: var(--ink-dim); padding-top: 0.5rem; line-height: 1.6;
+}
+.svc-title {
+    font-family: var(--mincho); font-weight: 700;
+    font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height: 1.5;
+    margin: 1.6rem 0 1.1rem; color: #FFFFFF;
+}
+.svc-text { font-size: 0.95rem; line-height: 2; color: #C8CCD6; }
+@media (max-width: 820px) {
+    .svc-grid { grid-template-columns: 1fr; }
+}
