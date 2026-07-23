@@ -321,7 +321,7 @@
             </div>
             <div class="dept-members">
                 <article class="mem-card">
-                    <div class="mem-photo"><img src="images/members/itou.jpg" alt="伊藤 義将"></div>
+                    <div class="mem-photo"><img src="images/members/itou-icon.jpg" alt="伊藤 義将"></div>
                     <div class="mem-body">
                         <p class="mem-role">SALES MANAGER</p>
                         <h4 class="mem-name">伊藤 義将</h4>
@@ -329,7 +329,7 @@
                     </div>
                 </article>
                 <article class="mem-card">
-                    <div class="mem-photo"><img src="images/members/yoshinaga.jpg" alt="吉永 友太郎"></div>
+                    <div class="mem-photo"><img src="images/members/yoshinaga-icon.jpg" alt="吉永 友太郎"></div>
                     <div class="mem-body">
                         <p class="mem-role">SALES</p>
                         <h4 class="mem-name">吉永 友太郎</h4>
@@ -346,7 +346,7 @@
             </div>
             <div class="dept-members">
                 <article class="mem-card">
-                    <div class="mem-photo"><img src="images/members/fujihira.jpg" alt="藤平 勇太"></div>
+                    <div class="mem-photo"><img src="images/members/fujihira-icon.jpg" alt="藤平 勇太"></div>
                     <div class="mem-body">
                         <p class="mem-role">AD OPS MANAGER</p>
                         <h4 class="mem-name">藤平 勇太</h4>
@@ -371,7 +371,7 @@
             </div>
             <div class="dept-members">
                 <article class="mem-card">
-                    <div class="mem-photo"><img src="images/members/manabe.jpg" alt="真辺 匠"></div>
+                    <div class="mem-photo"><img src="images/members/manabe-icon.jpg" alt="真辺 匠"></div>
                     <div class="mem-body">
                         <p class="mem-role">BIZ DEV MANAGER</p>
                         <h4 class="mem-name">真辺 匠</h4>
@@ -412,6 +412,18 @@
                     </div>
                 </article>
             </div>
+
+            <!-- 3人目以降は折りたたみ。この .dept-members の中に .mem-card を足すだけで
+                 下のボタンが自動表示され、人数（＋N名）も自動計算される。
+                 空のあいだはボタンごと非表示になる。 -->
+            <div class="dept-more" id="dept-more-cs" inert>
+                <div class="dept-members">
+                </div>
+            </div>
+            <button class="dept-more-btn" type="button" aria-expanded="false" aria-controls="dept-more-cs" hidden>
+                <span class="dept-more-label">メンバーを全員見る</span>
+                <span class="dept-more-arrow" aria-hidden="true"></span>
+            </button>
         </div>
 
     </div>

@@ -2111,3 +2111,110 @@ body { font-weight: 500 !important; }
     .svc-grid { grid-template-columns: 1fr; }
 }
 
+/* ============================================================
+   メンバー写真：アイコン（円形）型
+   ※ .mem-photo は上方に複数の !important ルールがあるため、
+     最終ブロックとしてここで上書きしている（消さないこと）
+   ============================================================ */
+.mem-photo {
+    flex: 0 0 clamp(120px, 12vw, 168px) !important;
+    width: clamp(120px, 12vw, 168px) !important;
+    height: clamp(120px, 12vw, 168px) !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+    border: 2px solid rgba(233,184,114,0.35) !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+    overflow: hidden;
+}
+/* 顔がアイコンの中央に来るよう、正方形に切り出した -icon.jpg を使用 */
+.mem-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 50%;
+}
+.mem-card:hover .mem-photo {
+    border-color: rgba(211,0,55,0.6) !important;
+}
+/* 円の中に収まるようプレースホルダー文字を小さく */
+.mem-photo .ph-label {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.18em !important;
+}
+/* 写真が小さくなったのでカードは2列に戻す */
+.dept-members { grid-template-columns: repeat(2, 1fr) !important; }
+.mem-card {
+    gap: 1.5rem !important;
+    padding: 1.8rem !important;
+    align-items: center !important;
+}
+/* アイコンを大きくした分、2列だと本文が窮屈になるので早めに1列へ */
+@media (max-width: 1080px) {
+    .dept-members { grid-template-columns: 1fr !important; }
+    .mem-photo {
+        flex: 0 0 140px !important;
+        width: 140px !important;
+        height: 140px !important;
+    }
+}
+/* タブレット〜大きめスマホ：アイコンなので横並びのまま */
+@media (max-width: 640px) {
+    .mem-card { flex-direction: row !important; gap: 1.2rem !important; padding: 1.5rem !important; }
+    .mem-photo {
+        flex: 0 0 112px !important;
+        width: 112px !important;
+        height: 112px !important;
+    }
+}
+/* ============================================================
+   部署メンバー：3人目以降の折りたたみ（カスタマーサポート部など）
+   ============================================================ */
+.dept-more {
+    display: grid; grid-template-rows: 0fr;
+    opacity: 0; overflow: hidden; margin-top: 0;
+    transition: grid-template-rows 0.5s var(--ease), opacity 0.4s var(--ease), margin-top 0.5s var(--ease);
+}
+.dept-more.is-open {
+    grid-template-rows: 1fr; opacity: 1; margin-top: clamp(1.5rem, 4vw, 3rem);
+}
+.dept-more > .dept-members { overflow: hidden; min-height: 0; }
+
+.dept-more-btn {
+    display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+    width: 100%; margin-top: 1.6rem; padding: 0.95rem 1.2rem;
+    background: none; cursor: pointer;
+    border: 1px solid var(--line);
+    font-family: var(--display); font-size: 0.82rem; letter-spacing: 0.18em;
+    color: var(--gold);
+    transition: border-color 0.4s var(--ease), color 0.4s var(--ease), background 0.4s var(--ease);
+}
+.dept-more-btn:hover {
+    border-color: rgba(211,0,55,0.5);
+    background: rgba(211,0,55,0.06);
+    color: #FFFFFF;
+}
+.dept-more-btn .dept-more-arrow {
+    width: 10px; height: 10px; position: relative; flex-shrink: 0;
+    transition: transform 0.4s var(--ease);
+}
+.dept-more-btn .dept-more-arrow::before,
+.dept-more-btn .dept-more-arrow::after {
+    content: ''; position: absolute; top: 50%;
+    width: 7px; height: 1.5px; background: currentColor;
+}
+.dept-more-btn .dept-more-arrow::before { left: 0; transform: rotate(45deg); }
+.dept-more-btn .dept-more-arrow::after { right: 0; transform: rotate(-45deg); }
+.dept-more-btn.is-open .dept-more-arrow { transform: rotate(180deg); }
+
+/* 狭いスマホ：横並びだと本文が窮屈になるのでアイコンを上に */
+@media (max-width: 520px) {
+    .mem-card { flex-direction: column !important; align-items: flex-start !important; }
+    .mem-photo {
+        flex: 0 0 auto !important;
+        width: 104px !important;
+        height: 104px !important;
+        margin-bottom: 0.2rem;
+    }
+}
+

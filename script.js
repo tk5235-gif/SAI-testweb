@@ -226,6 +226,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* ── メンバー「全員見る」トグル（3人目以降を折りたたむ部署用） ── */
+    document.querySelectorAll('.dept-more-btn').forEach(btn => {
+        const wrap = document.getElementById(btn.getAttribute('aria-controls'));
+        if (!wrap) return;
+        const hidden = wrap.querySelectorAll('.mem-card').length;
+        if (!hidden) { btn.hidden = true; return; }   // 隠すメンバーが居なければボタンごと出さない
+        btn.hidden = false;
+
+        const label = btn.querySelector('.dept-more-label');
+        const closedText = `メンバーを全員見る（＋${hidden}名）`;
+        label.textContent = closedText;
+
+        btn.addEventListener('click', () => {
+            const open = !wrap.classList.contains('is-open');
+            wrap.classList.toggle('is-open', open);
+            btn.classList.toggle('is-open', open);
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            wrap.toggleAttribute('inert', !open);
+            label.textContent = open ? '閉じる' : closedText;
+        });
+    });
+
     /* ── timetable：事業部別タブ切り替え ── */
     const timetableTabs = document.querySelectorAll('.timetable-tab');
     const timetablePanels = document.querySelectorAll('.timetable-panel');
