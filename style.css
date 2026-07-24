@@ -2206,6 +2206,8 @@ body { font-weight: 500 !important; }
 .dept-more-btn .dept-more-arrow::before { left: 0; transform: rotate(45deg); }
 .dept-more-btn .dept-more-arrow::after { right: 0; transform: rotate(-45deg); }
 .dept-more-btn.is-open .dept-more-arrow { transform: rotate(180deg); }
+/* hidden属性を確実に効かせる（display:flex が [hidden] より詳細度が高いため上書き） */
+.dept-more-btn[hidden] { display: none !important; }
 
 /* 狭いスマホ：横並びだと本文が窮屈になるのでアイコンを上に */
 @media (max-width: 520px) {
