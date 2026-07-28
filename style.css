@@ -2231,3 +2231,9 @@ body { font-weight: 500 !important; }
     }
 }
 
+/* 部署メンバーが1名のみの場合（事業開発部）：中央寄せ・適度な幅の1列に */
+.dept-members.dept-solo {
+    grid-template-columns: minmax(0, 680px) !important;
+    justify-content: center;
+}
+
