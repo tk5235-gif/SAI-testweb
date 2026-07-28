@@ -2079,6 +2079,17 @@ body { font-weight: 500 !important; }
     gap: clamp(1.2rem, 2.5vw, 2rem);
     max-width: 1100px; margin: 0 auto;
 }
+/* 事業内容の導入リード */
+.svc-lead {
+    max-width: 860px; margin: 0 auto clamp(2rem, 4vw, 3rem);
+    text-align: center; color: #C8CCD6;
+    font-size: clamp(1rem, 1.9vw, 1.15rem); line-height: 2.1; font-weight: 600;
+}
+/* 3項目レイアウト（マーケティング／広告／カスタマーサポート） */
+.svc-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+    .svc-grid-3 { grid-template-columns: 1fr; max-width: 560px; }
+}
 .svc-card {
     background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
     border: 1px solid var(--line); border-radius: 18px;
