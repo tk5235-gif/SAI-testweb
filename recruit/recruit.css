@@ -432,6 +432,12 @@ ul{list-style:none;}
 @keyframes wsf{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
 
 .ws-section{max-width:1120px;margin:0 auto;padding:clamp(3.5rem,8vw,6rem) clamp(1.3rem,5vw,3rem);}
+/* 現場の様子（横長の写真バナー） */
+.ws-scene{aspect-ratio:16/9;max-width:980px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(135deg,#dfe5f2,#eef1f8);}
+.ws-scene img{width:100%;height:100%;object-fit:cover;}
+.ws-scene.is-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;}
+.ws-scene-label{font-family:var(--display);font-weight:600;letter-spacing:.28em;color:#9aa8c8;font-size:1rem;}
+.ws-scene-cap{color:#9aa8c8;font-size:.85rem;letter-spacing:.02em;}
 .ws-head{margin-bottom:clamp(2.2rem,5vw,3.4rem);}
 .ws-label{display:inline-block;font-family:var(--display);font-weight:600;letter-spacing:.25em;font-size:.8rem;color:var(--brand);padding-top:.9rem;position:relative;margin-bottom:.8rem;}
 .ws-label::before{content:'';position:absolute;top:0;left:0;width:34px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--brand),#ff7a4d);}
