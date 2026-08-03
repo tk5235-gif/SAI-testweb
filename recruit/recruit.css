@@ -99,6 +99,12 @@ ul{list-style:none;}
 
 /* ── 共通：セクション（余白×凝縮：たっぷりの間と大きな英字見出し） ── */
 .r-section{max-width:1120px;margin:0 auto;padding:clamp(5rem,12vw,9.5rem) clamp(1.3rem,5vw,3rem);}
+/* スマホ：セクション背景を交互に切り替え、スクロールの単調さ・離脱を軽減
+   （PCはmax-widthで中央寄せのため据え置き、スマホは全幅で色が効く） */
+@media(max-width:1120px){
+  .r-section.r-alt,.r-section.r-numbers,.r-section.r-message{background:#E3EAF5;}
+  .r-section{padding-top:clamp(3.4rem,11vw,5rem);padding-bottom:clamp(3.4rem,11vw,5rem);}
+}
 .r-head{margin-bottom:clamp(2.8rem,6vw,4.8rem);}
 .r-label{display:inline-block;font-family:var(--display);font-weight:600;letter-spacing:.34em;font-size:1rem;color:var(--brand);position:relative;padding-top:1.4rem;margin-bottom:1.3rem;text-transform:uppercase;}
 .r-label::before{content:'';position:absolute;top:0;left:0;width:46px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--brand),#ff7a4d);}
