@@ -2237,3 +2237,56 @@ body { font-weight: 500 !important; }
     justify-content: center;
 }
 
+/* ============================================================
+   代表メッセージ：リデザイン（高級感・信頼感・レスポンシブ最適化）
+   ※ 既存の分散ルールを最終ブロックとして上書き
+   ============================================================ */
+.message-inner {
+    grid-template-columns: 0.92fr 1fr !important;
+    gap: clamp(2rem, 3vw, 3.5rem) !important;
+    align-items: center !important;
+    max-width: 1400px !important;
+}
+/* 代表メッセージは右側の余白を活かして横幅を確保（本文を約6行に） */
+.message { padding-left: clamp(1.5rem, 4.5vw, 4.5rem) !important; padding-right: clamp(1.5rem, 4.5vw, 4.5rem) !important; }
+/* 写真：一回り大きく・余白を減らして存在感／枠は洗練 */
+.ceo-photo {
+    border: none !important;
+    border-radius: 6px !important;
+    box-shadow: 0 34px 74px -20px rgba(0,0,0,0.62) !important;
+}
+/* 見出し：全デバイスで必ず2行（各行nowrap＋収まるサイズ） */
+.message-catch {
+    font-size: clamp(1.5rem, 5.2vw, 2.9rem) !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: clamp(1.5rem, 3vw, 2.2rem) !important;
+}
+.message-catch span { display: block; white-space: nowrap; }
+/* 本文：PC/タブレットで約6行に収まる幅・行間で読みやすく */
+.message-body { max-width: 700px; }
+.message-text { font-size: 1.02rem !important; line-height: 2.05 !important; color: #C8CCD6 !important; margin-bottom: 1.3rem !important; }
+/* 署名：代表取締役を少し太く、名前との配置を洗練（右寄せ・階層感） */
+.message-sign {
+    margin-top: clamp(2.4rem, 4vw, 3.2rem) !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 0.5rem !important;
+}
+.message-sign .sign-name { display: flex !important; flex-direction: column !important; align-items: flex-end !important; gap: 0.45rem !important; }
+.message-sign span { font-size: 0.8rem !important; font-weight: 600 !important; letter-spacing: 0.24em !important; color: #AEB4C4 !important; }
+.message-sign strong { font-family: var(--mincho) !important; font-size: clamp(1.6rem, 2.3vw, 1.95rem) !important; font-weight: 700 !important; letter-spacing: 0.14em !important; color: #FFFFFF !important; line-height: 1.1 !important; }
+
+/* タブレット以下：1カラム・写真を全幅で大きく・署名は左寄せ */
+@media (max-width: 900px) {
+    .message-inner { grid-template-columns: 1fr !important; gap: clamp(2rem, 6vw, 2.8rem) !important; max-width: 720px !important; }
+    .message-photo { max-width: none !important; width: 100% !important; }
+    .message-body { max-width: none; }
+    .message-sign { align-items: flex-start !important; }
+    .message-sign .sign-name { align-items: flex-start !important; }
+}
+/* 極小端末でも見出しが2行に収まるよう保険 */
+@media (max-width: 359px) {
+    .message-catch { font-size: 1.32rem !important; }
+}
+
