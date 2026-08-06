@@ -832,3 +832,26 @@ select.e-input{appearance:none;cursor:pointer;background-image:url("data:image/s
   .r-dept-list .r-dept-card{grid-template-columns:3rem 1fr;row-gap:.5rem;padding:1.2rem 1.3rem;}
   .r-dept-list .r-dept-card p{grid-column:1 / -1;}
 }
+
+/* ============================================================
+   代表メッセージ：コーポレートと同形式（写真大きく・見出し2行＋区切り線・署名洗練）
+   ============================================================ */
+.r-msg-inner{grid-template-columns:0.92fr 1fr;gap:clamp(2rem,3vw,3.5rem);align-items:center;max-width:1360px;}
+.r-msg-photo{box-shadow:0 30px 60px -18px rgba(20,28,50,.28);}
+.r-msg-body{max-width:700px;}
+.r-msg-body h3{font-size:clamp(1.7rem,4.4vw,2.7rem);line-height:1.4;padding-bottom:clamp(1.2rem,2.4vw,1.7rem);margin-bottom:clamp(1.4rem,2.8vw,1.9rem);border-bottom:1px solid rgba(20,28,50,.14);}
+.r-msg-body h3 span{display:block;white-space:nowrap;}
+.r-msg-body p{font-size:1.02rem;line-height:2.05;}
+.r-msg-sign{margin-top:clamp(2.2rem,3.5vw,3rem);flex-direction:column;align-items:flex-end;gap:.5rem;background:transparent;}
+.r-msg-sign .sign-name{align-items:flex-end;gap:.4rem;}
+.r-msg-sign span{font-size:.8rem;font-weight:700;letter-spacing:.22em;color:var(--ink-2);}
+.r-msg-sign strong{font-size:clamp(1.5rem,2.2vw,1.85rem);letter-spacing:.08em;color:var(--ink);line-height:1.1;}
+@media(max-width:900px){
+  .r-msg-inner{grid-template-columns:1fr;gap:clamp(1.8rem,5vw,2.6rem);max-width:640px;}
+  .r-msg-photo{max-width:none;}
+  .r-msg-body{max-width:none;}
+  .r-msg-sign{align-items:flex-start;}
+  .r-msg-sign .sign-name{align-items:flex-start;}
+}
+/* 極小端末でも見出しが2行に */
+@media(max-width:359px){ .r-msg-body h3{font-size:1.45rem;} }
