@@ -2260,7 +2260,9 @@ body { font-weight: 500 !important; }
     font-size: clamp(1.5rem, 5.2vw, 2.9rem) !important;
     line-height: 1.5 !important;
     letter-spacing: 0.02em !important;
-    margin-bottom: clamp(1.5rem, 3vw, 2.2rem) !important;
+    padding-bottom: clamp(1.3rem, 2.5vw, 1.8rem) !important;
+    margin-bottom: clamp(1.5rem, 3vw, 2rem) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.18) !important;
 }
 .message-catch span { display: block; white-space: nowrap; }
 /* 本文：PC/タブレットで約6行に収まる幅・行間で読みやすく */
