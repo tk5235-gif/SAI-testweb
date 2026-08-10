@@ -76,13 +76,35 @@ for (const rel of [...assets, ...usedImages]) {
     copiedBytes += fs.statSync(src).size;
 }
 
-/* ---------- 4. .htaccess（HTTPS強制・社内ファイル遮断） ---------- */
+/* ---------- 4. .htaccess ---------- */
+/*  ※ 旧WordPressサイト(saigroupe.com)の .htaccess を上書きします。
+ *     入れ替え前に必ず既存の .htaccess をダウンロードして保管してください。 */
 fs.writeFileSync(path.join(DIST, '.htaccess'), [
-    '# 常時SSL（http → https）',
+    '# ============================================================',
+    '#  株式会社SAI 静的サイト用 .htaccess',
+    '#  ※ 旧WordPressの .htaccess を置き換えるものです',
+    '# ============================================================',
+    '',
     '<IfModule mod_rewrite.c>',
     'RewriteEngine On',
+    '',
+    '# --- 常時SSL（http → https） ---',
     'RewriteCond %{HTTPS} !=on',
     'RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]',
+    '',
+    '# --- 旧WordPressサイトのURLを新URLへ転送（301） ---',
+    '#     検索結果・名刺・求人媒体に残った旧URLを拾うため',
+    'RewriteRule ^contact/?$          /contact.html [R=301,L]',
+    'RewriteRule ^thanks/?$           /thanks.html [R=301,L]',
+    'RewriteRule ^privacy-policy/?$   /privacy.html [R=301,L]',
+    'RewriteRule ^service/?$          /#service [R=301,L]',
+    'RewriteRule ^vision/?$           /#philosophy [R=301,L]',
+    'RewriteRule ^member/?$           /#members [R=301,L]',
+    'RewriteRule ^company/?$          /#company [R=301,L]',
+    '#     /recruit/ は新サイトにも同じパスがあるため転送不要',
+    '',
+    '# --- 旧WordPressの残骸へのアクセスを遮断 ---',
+    'RewriteRule ^(wp-admin|wp-includes|wp-content|wp-login\\.php|xmlrpc\\.php) - [R=404,L]',
     '</IfModule>',
     '',
     '# 資料系ファイルは公開しない',
@@ -92,6 +114,9 @@ fs.writeFileSync(path.join(DIST, '.htaccess'), [
     '',
     '# 文字コード',
     'AddDefaultCharset UTF-8',
+    '',
+    '# index.php より index.html を優先（WordPress残置時の保険）',
+    'DirectoryIndex index.html index.php',
     '',
 ].join('\n'));
 
