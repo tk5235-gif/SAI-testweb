@@ -1,17 +1,19 @@
 @echo off
 chcp 65001 > nul
 cd /d "%~dp0"
-echo ============================================
-echo  SAI サイト  アップロード用フォルダを作成中
-echo ============================================
+echo ================================================
+echo   PRODUCTION BUILD  --^>  saigroupe.com
+echo ================================================
 echo.
 node build-dist.js
+if errorlevel 1 goto ERR
 echo.
-if errorlevel 1 (
-    echo エラーが発生しました。Node.js がインストールされているか確認してください。
-) else (
-    echo 完了しました。dist フォルダを開きます。
-    start "" "%~dp0dist"
-)
+start "" "%~dp0dist"
+goto END
+:ERR
+echo.
+echo [ERROR] Build failed. Is Node.js installed?
+echo         Check with: node -v
+:END
 echo.
 pause
