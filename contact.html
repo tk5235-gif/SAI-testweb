@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お問い合わせ | 株式会社SAI</title>
 <meta name="description" content="株式会社SAIへのお問い合わせページです。サービス・採用・取材などお気軽にご連絡ください。">
+<link rel="canonical" href="https://saigroupe.com/contact.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="株式会社SAI">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="お問い合わせ | 株式会社SAI">
+<meta property="og:description" content="株式会社SAIへのお問い合わせページです。サービス・採用・取材などお気軽にご連絡ください。">
+<meta property="og:url" content="https://saigroupe.com/contact.html">
+<meta property="og:image" content="https://saigroupe.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,7 +96,15 @@
         </aside>
 
         <!-- 右：フォーム -->
-        <form class="contact-form" id="contactForm" novalidate data-reveal>
+        <form class="contact-form" id="contactForm" action="send.php" method="post" novalidate data-reveal>
+            <input type="hidden" name="formType" value="contact">
+            <input type="hidden" name="_ts" id="cf-ts" value="0">
+            <!-- スパム対策：人には見えない項目。入力されていたら破棄する -->
+            <div class="form-hp" aria-hidden="true">
+                <label for="cf-hp">この項目は入力しないでください</label>
+                <input type="text" id="cf-hp" name="_hp" tabindex="-1" autocomplete="off">
+            </div>
+
             <div class="form-field">
                 <label class="form-label" for="cf-name">お名前 <span class="form-req">必須</span></label>
                 <input class="form-input" type="text" id="cf-name" name="name" autocomplete="name" required>
@@ -136,7 +155,7 @@
             <button type="submit" class="form-submit recruit-btn">
                 送信する<i></i>
             </button>
-            <p class="form-hint">送信ボタンを押すと、入力内容がメール作成画面に反映されます。</p>
+            <p class="form-hint">送信後、ご入力のメールアドレス宛に受付確認の自動返信をお送りします。</p>
         </form>
 
     </div>

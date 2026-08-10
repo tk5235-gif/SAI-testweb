@@ -2292,3 +2292,44 @@ body { font-weight: 500 !important; }
     .message-catch { font-size: 1.32rem !important; }
 }
 
+
+/* ══════════════════════════════════════════
+   送信完了ページ（thanks.html）
+   ══════════════════════════════════════════ */
+.thanks-box {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(2.4rem, 6vw, 3.6rem) clamp(1.4rem, 5vw, 3rem);
+    text-align: center;
+    border: 1px solid rgba(233, 184, 114, .28);
+    border-radius: 3px;
+    background: rgba(255, 255, 255, .025);
+}
+.thanks-lead {
+    font-family: "Shippori Mincho", serif;
+    font-size: clamp(1.35rem, 3.6vw, 1.9rem);
+    font-weight: 700;
+    line-height: 1.9;
+    letter-spacing: .06em;
+    color: #E9B872;
+    margin: 0 0 1.6rem;
+}
+.thanks-text {
+    font-size: clamp(.92rem, 2.4vw, 1rem);
+    line-height: 2.1;
+    letter-spacing: .04em;
+    margin: 0 0 1.8rem;
+}
+.thanks-note {
+    font-size: clamp(.76rem, 2.1vw, .84rem);
+    line-height: 2;
+    letter-spacing: .03em;
+    color: rgba(242, 244, 248, .58);
+    padding-top: 1.6rem;
+    border-top: 1px solid rgba(255, 255, 255, .09);
+    margin: 0 0 2.4rem;
+}
+.thanks-btn { display: inline-flex; }
+/* スパム対策ハニーポット：画面にも読み上げにも出さない */
+.form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-submit:disabled, .e-submit:disabled { opacity: .55; cursor: not-allowed; }

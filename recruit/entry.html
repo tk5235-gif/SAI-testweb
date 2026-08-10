@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>エントリー | 株式会社SAI 採用サイト</title>
 <meta name="description" content="株式会社SAIへのエントリーページです。営業・広告運用・事業開発・カスタマーサポートの各職種に応募できます。未経験歓迎。">
+<link rel="canonical" href="https://saigroupe.com/recruit/entry.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="株式会社SAI">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="エントリー | 株式会社SAI 採用サイト">
+<meta property="og:description" content="株式会社SAIへのエントリーページです。営業・広告運用・事業開発・カスタマーサポートの各職種に応募できます。未経験歓迎。">
+<meta property="og:url" content="https://saigroupe.com/recruit/entry.html">
+<meta property="og:image" content="https://saigroupe.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +83,14 @@
     </ul>
 
     <div class="e-wrap">
-        <form class="entry-form" id="entryForm" novalidate data-reveal>
+        <form class="entry-form" id="entryForm" action="../send.php" method="post" novalidate data-reveal>
+            <input type="hidden" name="formType" value="entry">
+            <input type="hidden" name="_ts" id="en-ts" value="0">
+            <!-- スパム対策：人には見えない項目。入力されていたら破棄する -->
+            <div class="form-hp" aria-hidden="true">
+                <label for="en-hp">この項目は入力しないでください</label>
+                <input type="text" id="en-hp" name="_hp" tabindex="-1" autocomplete="off">
+            </div>
 
             <div class="e-row">
                 <div class="e-field">
@@ -136,7 +154,7 @@
             <p class="e-error" data-for="en-agree"></p>
 
             <button type="submit" class="r-btn e-submit">エントリーする<i></i></button>
-            <p class="e-hint">送信ボタンを押すと、入力内容がメール作成画面に反映されます。</p>
+            <p class="e-hint">送信後、ご入力のメールアドレス宛に受付確認の自動返信をお送りします。</p>
         </form>
     </div>
 

@@ -315,22 +315,17 @@ document.addEventListener('DOMContentLoaded', () => {
             f.addEventListener(ev, () => validate(f));
             f.addEventListener('input', () => { if ((f.closest('.form-field') || {}).classList?.contains('is-invalid')) validate(f); });
         });
+        // bot判定用のフォーム表示時刻（send.php 側で極端に速い送信を弾く）
+        const cfTs = document.getElementById('cf-ts');
+        if (cfTs) cfTs.value = Math.floor(Date.now() / 1000);
+
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
             let firstInvalid = null;
             fields.forEach(f => { if (!validate(f) && !firstInvalid) firstInvalid = f; });
-            if (firstInvalid) { firstInvalid.focus(); return; }
-            const g = id => (document.getElementById(id).value || '').trim();
-            const subject = `【お問い合わせ／${g('cf-type')}】${g('cf-name')}`;
-            const body =
-                `お名前：${g('cf-name')}\n` +
-                `会社名：${g('cf-company')}\n` +
-                `メール：${g('cf-email')}\n` +
-                `電話：${g('cf-tel')}\n` +
-                `種別：${g('cf-type')}\n\n` +
-                `【お問い合わせ内容】\n${g('cf-message')}\n`;
-            // ※ 送信先。Formspree等に切り替える場合はこの mailto を form action に差し替え
-            window.location.href = `mailto:info@saigroupe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            if (firstInvalid) { e.preventDefault(); firstInvalid.focus(); return; }
+            // 検証OK → send.php へ通常のPOST送信。二重送信だけ防ぐ
+            const btn = contactForm.querySelector('.form-submit');
+            if (btn) { btn.disabled = true; btn.classList.add('is-sending'); }
         });
     }
 
@@ -363,22 +358,15 @@ document.addEventListener('DOMContentLoaded', () => {
             f.addEventListener(ev, () => validate(f));
             f.addEventListener('input', () => { const w = f.closest('.e-field'); if (w && w.classList.contains('is-invalid')) validate(f); });
         });
+        const enTs = document.getElementById('en-ts');
+        if (enTs) enTs.value = Math.floor(Date.now() / 1000);
+
         entryForm.addEventListener('submit', (e) => {
-            e.preventDefault();
             let firstInvalid = null;
             fields.forEach(f => { if (!validate(f) && !firstInvalid) firstInvalid = f; });
-            if (firstInvalid) { firstInvalid.focus(); return; }
-            const g = id => (document.getElementById(id).value || '').trim();
-            const subject = `【エントリー／${g('en-job')}】${g('en-name')}`;
-            const body =
-                `お名前：${g('en-name')}\n` +
-                `ふりがな：${g('en-kana')}\n` +
-                `メール：${g('en-email')}\n` +
-                `電話：${g('en-tel')}\n` +
-                `希望職種：${g('en-job')}\n` +
-                `現在の状況：${g('en-status')}\n\n` +
-                `【志望動機・自己PR】\n${g('en-message')}\n`;
-            window.location.href = `mailto:info@saigroupe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            if (firstInvalid) { e.preventDefault(); firstInvalid.focus(); return; }
+            const btn = entryForm.querySelector('.e-submit');
+            if (btn) { btn.disabled = true; btn.classList.add('is-sending'); }
         });
     }
 

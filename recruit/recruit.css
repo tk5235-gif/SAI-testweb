@@ -856,3 +856,13 @@ select.e-input{appearance:none;cursor:pointer;background-image:url("data:image/s
 }
 /* 極小端末でも見出しが2行に */
 @media(max-width:359px){ .r-msg-body h3{font-size:1.45rem;} }
+
+/* ══════════ エントリー完了ページ（thanks.html） ══════════ */
+.r-thanks-box{max-width:720px;margin:0 auto;padding:clamp(2.2rem,5.5vw,3.4rem) clamp(1.4rem,5vw,3rem);text-align:center;background:#fff;border-radius:6px;box-shadow:0 10px 40px rgba(20,27,46,.07);}
+.r-thanks-text{font-size:clamp(1rem,2.6vw,1.15rem);line-height:2.1;letter-spacing:.04em;color:var(--ink);margin:0 0 1.6rem;}
+.r-thanks-text strong{color:var(--brand);font-weight:700;}
+.r-thanks-note{font-size:clamp(.78rem,2.1vw,.85rem);line-height:2;letter-spacing:.03em;color:var(--ink-2);padding-top:1.5rem;border-top:1px solid rgba(20,27,46,.1);margin:0 0 2.2rem;}
+.r-thanks-btn{display:inline-flex;}
+/* スパム対策ハニーポット：画面にも読み上げにも出さない */
+.form-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.e-submit:disabled{opacity:.55;cursor:not-allowed;}
