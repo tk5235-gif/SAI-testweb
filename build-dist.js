@@ -134,11 +134,44 @@ if (STAGING) {
         'Disallow: /\n');
 }
 
+/* ---------- 6. dist.zip を作る（ファイルマネージャからのアップロード用） ---------- */
+/*  FTPソフトを使わずブラウザだけで公開できるようにするため。
+ *  Windows標準の右クリックZIPと違い、.htaccess も確実に含まれる。 */
+/*  ※ PowerShellの Compress-Archive は区切り文字を「\」で書き込むため、
+ *     Linuxサーバー上で解凍するとフォルダ構造が壊れる（images\ceo.jpg という
+ *     名前の1ファイルになる）。ZipArchive で「/」を明示して作る。 */
+const ZIP = path.join(ROOT, 'dist.zip');
+let zipOk = false;
+try {
+    fs.rmSync(ZIP, { force: true });
+    const ps = `
+$ErrorActionPreference='Stop'
+Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+$src = '${DIST}'
+$zip = [System.IO.Compression.ZipFile]::Open('${ZIP}', 'Create')
+try {
+  Get-ChildItem -LiteralPath $src -Recurse -File -Force | ForEach-Object {
+    $rel = $_.FullName.Substring($src.Length + 1).Replace('\\','/')
+    [void][System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $_.FullName, $rel)
+  }
+} finally { $zip.Dispose() }
+`.trim();
+    require('child_process').execFileSync('powershell',
+        ['-NoProfile', '-NonInteractive', '-Command', ps], { stdio: 'pipe' });
+    zipOk = fs.existsSync(ZIP);
+} catch (e) {
+    console.log('  ※ dist.zip の作成に失敗しました（distフォルダは正常に作成されています）');
+}
+
 const mb = n => (n / 1024 / 1024).toFixed(1) + 'MB';
 console.log('');
 console.log('dist/ を作成しました。  [' + (STAGING ? '検証用ビルド' : '本番用ビルド') + ']');
 console.log('  コピー   : ' + copied + ' ファイル (' + mb(copiedBytes) + ')');
 console.log('  除外画像 : ' + skipped + ' ファイル (' + mb(skippedBytes) + ') ※参照なし');
+if (zipOk) {
+    console.log('  dist.zip : 作成しました (' + mb(fs.statSync(ZIP).size) + ') ← ファイルマネージャ用');
+}
 console.log('');
 
 if (STAGING) {
