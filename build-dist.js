@@ -9,7 +9,7 @@
  * ・HTML/CSS/JS/PHP から参照されていない画像は含めない（原本はローカルに残る）
  *
  * --staging を付けると検索避けの robots.txt を同梱する。
- * n.saigroupe.com（検証用サブドメイン）へ上げるときは必ずこちらを使うこと。
+ * stg.saigroupe.com（検証用サブドメイン）へ上げるときは必ずこちらを使うこと。
  * 本番用ビルドには robots.txt は入らない。
  */
 const fs = require('fs');
@@ -129,7 +129,7 @@ fs.writeFileSync(path.join(DIST, '.htaccess'), [
 /* ---------- 5. 検証用ビルドなら検索避けを入れる ---------- */
 if (STAGING) {
     fs.writeFileSync(path.join(DIST, 'robots.txt'),
-        '# 検証用サブドメイン（n.saigroupe.com）専用。本番には絶対に置かないこと。\n' +
+        '# 検証用サブドメイン（stg.saigroupe.com）専用。本番には絶対に置かないこと。\n' +
         'User-agent: *\n' +
         'Disallow: /\n');
 }
@@ -145,8 +145,8 @@ if (STAGING) {
     console.log('  検索避けの robots.txt を同梱しました（Disallow: /）。');
     console.log('');
     console.log('この dist の「中身」を、検証用サブドメインの');
-    console.log('  /home/<サーバーID>/saigroupe.com/public_html/n/');
-    console.log('にアップロードしてください。  → https://n.saigroupe.com/');
+    console.log('  /home/<サーバーID>/saigroupe.com/public_html/stg/');
+    console.log('にアップロードしてください。  → https://stg.saigroupe.com/');
     console.log('');
     console.log('  ※ 本番へ上げるときは build.bat（本番用）で作り直してください。');
     console.log('     このビルドをそのまま本番に置くと検索結果から消えます。');
